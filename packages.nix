@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, inputs, ...}:
 {
     nixpkgs.config.allowUnfree = true;
 
@@ -6,6 +6,7 @@
         # Desktop Applications
         discord
         nwg-look
+        inputs.zen-browser.packages."${system}".default
 
         # Tools
         vim
