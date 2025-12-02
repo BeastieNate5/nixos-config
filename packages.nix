@@ -49,6 +49,7 @@
         gopls
         typescript-language-server
         rust-analyzer
+        nixd
     ];
 
     programs.firefox.enable = true;
