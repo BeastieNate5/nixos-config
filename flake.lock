@@ -40,7 +40,28 @@
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
+        "snapsr": "snapsr",
         "zen-browser": "zen-browser"
+      }
+    },
+    "snapsr": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1764874661,
+        "narHash": "sha256-ScRVoRn0BlcU4DyrWdYD7OwodIWONvHy84oGjGSbSxU=",
+        "owner": "BeastieNate5",
+        "repo": "snapsr",
+        "rev": "145389c2279a1e9615ad747b2fe7642de49ec123",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BeastieNate5",
+        "repo": "snapsr",
+        "type": "github"
       }
     },
     "zen-browser": {

@@ -23,6 +23,7 @@
         file
         pywal
         colorz
+        inputs.snapsr.packages."${system}".default
 
         # WM stuff
         niri
