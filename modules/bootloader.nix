@@ -1,10 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 {
     boot.loader.efi.canTouchEfiVariables = true;
     boot.loader.grub.enable = true;
     boot.loader.grub.device = "nodev";
     boot.loader.grub.efiSupport = true;
-    /*
     boot.loader.grub.theme = pkgs.stdenv.mkDerivation {
         pname = "Futaba Grub Theme";
         version = "0.0.1";
@@ -14,9 +13,8 @@
         };
 
         installPhase = ''
-            mkdir -p $out/navi
-            cp -r ./* $out/navi/
+            mkdir -p $out/theme
+            cp -r ./* $out/theme/
         '';
-    } + "/navi/theme.txt";
-    */
+    } + "/theme";
 }
