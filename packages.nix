@@ -6,7 +6,7 @@
         # Desktop Applications
         discord
         nwg-look
-        inputs.zen-browser.packages."${system}".default
+        inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
         # Tools
         vim
@@ -23,7 +23,7 @@
         file
         pywal
         colorz
-        inputs.snapsr.packages."${system}".default
+        inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
 
         # WM stuff
         niri
