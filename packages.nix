@@ -45,6 +45,7 @@
         rustup
         cargo
         tmux
+        docker
 
         # LSPs
         gopls
