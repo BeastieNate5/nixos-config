@@ -4,5 +4,6 @@
         texlivePackages.jetbrainsmono-otf
         texlivePackages.fontawesome
         nerd-fonts.symbols-only
+        minecraftia
     ];
 }
