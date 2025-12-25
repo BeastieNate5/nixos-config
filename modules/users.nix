@@ -3,7 +3,7 @@
    users.users.nate = {
      isNormalUser = true;
      shell = pkgs.zsh;
-     extraGroups = [ "wheel" ];
+     extraGroups = [ "wheel" "docker" ];
      packages = with pkgs; [
        tree
      ];
