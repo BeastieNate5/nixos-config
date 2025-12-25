@@ -58,4 +58,6 @@
     programs.zsh.enable = true;
     programs.niri.enable = true;
     programs.xwayland.enable = true;
+
+    virtualisation.docker.enable = true;
 }
