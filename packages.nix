@@ -7,6 +7,7 @@
         discord
         nwg-look
         steam
+        gamescope
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
         # Tools
