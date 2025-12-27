@@ -14,7 +14,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "nixos";
+  networking.hostName = "tailless";
   networking.networkmanager.enable = true;
 
   # Set your time zone.

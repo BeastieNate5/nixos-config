@@ -16,7 +16,7 @@
     };
 
     outputs = {self, nixpkgs, zen-browser, snapsr}@inputs: {
-            nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+            nixosConfigurations.tailless = nixpkgs.lib.nixosSystem {
 	        system = "x86_64-linux";
             specialArgs = { inherit inputs; };
 	        modules = [./hosts/tailless/configuration.nix];
