@@ -8,13 +8,13 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./packages.nix
-      ./bundler.nix
+      ../../packages.nix
+      ../../bundler.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "nixos";
+  networking.hostName = "oracle";
   networking.networkmanager.enable = true;
 
   # Set your time zone.
