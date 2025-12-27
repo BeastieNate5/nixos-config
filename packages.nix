@@ -40,6 +40,10 @@
         gcc
         nodejs
         go
+        (python3.withPackages (p: with p; [
+            requests 
+            pwntools
+        ]))
         rustc
         rustfmt
         rustup
