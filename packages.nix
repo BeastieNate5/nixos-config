@@ -6,6 +6,7 @@
         # Desktop Applications
         discord
         nwg-look
+        steam
         inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
         # Tools
