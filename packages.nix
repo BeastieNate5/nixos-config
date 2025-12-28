@@ -26,6 +26,7 @@
         file
         pywal
         colorz
+        btop
         inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
 
         # WM stuff
