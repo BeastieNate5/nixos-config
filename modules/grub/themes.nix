@@ -1,5 +1,5 @@
-{ config, pkgs, lib, ... }:
-let
+pkgs:
+{
     futaba = pkgs.stdenv.mkDerivation {
         pname = "Futaba Grub Theme";
         version = "0.0.1";
@@ -27,25 +27,4 @@ let
             cp -r ./yorha-1920x1080/* $out/theme/
         '';
     } + "/theme";
-in
-{
-    options.grubThemes = {
-        futaba =  {
-            enable = lib.mkEnableOption "Futaba Theme";
-        };
-
-        yorha = {
-            enable = lib.mkEnableOption "YoRHa Theme";
-        };
-    };
-
-    config = lib.mkMerge [
-        (lib.mkIf config.grubThemes.futaba.enable {
-            boot.loader.grub.theme = futaba;
-        })
-        (lib.mkIf config.grubThemes.yorha.enable {
-            boot.loader.grub.theme = yorha;
-        })
-    ];
 }
-
