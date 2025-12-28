@@ -21,6 +21,7 @@
         brightnessctl
         fastfetch
         eza
+        bat
         swww
         file
         pywal
