@@ -12,6 +12,7 @@
 
     # Tools
     vim
+    nh
     git
     zsh
     btop
