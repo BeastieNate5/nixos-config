@@ -14,6 +14,7 @@
     vim
     git
     zsh
+    btop
     wget
     neovim
     kitty
@@ -25,7 +26,6 @@
     swww
     file
     pywal
-    colorz
     btop
     inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
 
@@ -50,6 +50,7 @@
         pwntools
       ]
     ))
+
     rustc
     rustfmt
     rustup
