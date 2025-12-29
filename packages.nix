@@ -64,7 +64,6 @@
     hashcat
     ghidra-bin
     nmap
-    metasploit
     gobuster
     ffuf
 
