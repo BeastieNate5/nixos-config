@@ -58,6 +58,16 @@
     tmux
     docker
 
+    # Security stuff
+    inputs.pwngdb.packages."${pkgs.stdenv.hostPlatform.system}".default
+    john
+    hashcat
+    ghidra-bin
+    nmap
+    metasploit
+    gobuster
+    ffuf
+
     # LSPs
     gopls
     typescript-language-server

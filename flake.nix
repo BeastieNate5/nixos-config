@@ -13,6 +13,11 @@
       url = "github:BeastieNate5/snapsr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    pwngdb = {
+      url = "github:pwndbg/pwndbg";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -21,6 +26,7 @@
       nixpkgs,
       zen-browser,
       snapsr,
+      pwngdb
     }@inputs:
     {
       nixosConfigurations.tailless = nixpkgs.lib.nixosSystem {
