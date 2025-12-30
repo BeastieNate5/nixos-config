@@ -22,11 +22,8 @@
 
   outputs =
     {
-      self,
       nixpkgs,
-      zen-browser,
-      snapsr,
-      pwngdb
+      ...
     }@inputs:
     {
       nixosConfigurations.tailless = nixpkgs.lib.nixosSystem {
