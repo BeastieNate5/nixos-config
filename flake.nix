@@ -25,15 +25,20 @@
       nixpkgs,
       ...
     }@inputs:
-    {
-      nixosConfigurations.tailless = nixpkgs.lib.nixosSystem {
+    let
         system = "x86_64-linux";
+    in
+    {
+      formatter."${system}" = nixpkgs.legacyPackages."${system}".nixfmt-tree;
+
+      nixosConfigurations.tailless = nixpkgs.lib.nixosSystem {
+        inherit system;
         specialArgs = { inherit inputs; };
         modules = [ ./hosts/tailless/configuration.nix ];
       };
 
       nixosConfigurations.oracle = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = { inherit inputs; };
         modules = [ ./hosts/oracle/configuration.nix ];
       };
