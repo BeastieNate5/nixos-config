@@ -44,6 +44,6 @@ pkgs: {
         mkdir -p $out/theme
         cp -r ./lain/* $out/theme/
       '';
-    } 
+    }
     + "/theme";
 }
