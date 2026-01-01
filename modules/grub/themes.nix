@@ -30,4 +30,20 @@ pkgs: {
       '';
     }
     + "/theme";
+
+  lain =
+    pkgs.stdenv.mkDerivation rec {
+      pname = "Lain Grub Theme";
+      version = "1.0.1";
+      src = fetchTarball {
+        url = "https://github.com/uiriansan/LainGrubTheme/archive/refs/tags/${version}.tar.gz";
+        sha256 = "sha256:0x04n92mi907bnw0gr2x23nf0c31sgh69z44mslhfkams5ljwkda";
+      };
+
+      installPhase = ''
+        mkdir -p $out/theme
+        cp -r ./lain/* $out/theme/
+      '';
+    } 
+    + "/theme";
 }

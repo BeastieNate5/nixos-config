@@ -7,5 +7,5 @@ in
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
-  boot.loader.grub.theme = themes.yorha;
+  boot.loader.grub.theme = themes.lain;
 }
