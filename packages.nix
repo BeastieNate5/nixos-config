@@ -61,7 +61,7 @@
 
     # Security stuff
     inputs.pwngdb.packages."${pkgs.stdenv.hostPlatform.system}".default
-    john
+    #john
     hashcat
     ghidra-bin
     nmap
