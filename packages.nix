@@ -28,6 +28,8 @@
     file
     pywal
     btop
+    mpv
+    ffmpeg
     inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # WM stuff
