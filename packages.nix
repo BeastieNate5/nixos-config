@@ -15,6 +15,7 @@
     nh
     git
     zsh
+    starship
     btop
     wget
     neovim
