@@ -45,9 +45,9 @@
     waybar
 
     # Dev
-    gcc
-    nodejs
-    go
+    #gcc
+    #nodejs
+    #go
     (python3.withPackages (
       p: with p; [
         requests
@@ -55,10 +55,10 @@
       ]
     ))
 
-    rustc
-    rustfmt
-    rustup
-    cargo
+    #rustc
+    #rustfmt
+    #rustup
+    #cargo
     tmux
     docker
 
