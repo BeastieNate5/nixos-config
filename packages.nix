@@ -8,6 +8,7 @@
     nwg-look
     steam
     gamescope
+    networkmanagerapplet
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # Tools
