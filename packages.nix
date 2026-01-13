@@ -33,6 +33,7 @@
     mpv
     ffmpeg
     tailscale
+    samba
     inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # WM stuff
