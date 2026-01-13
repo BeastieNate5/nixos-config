@@ -32,6 +32,7 @@
     btop
     mpv
     ffmpeg
+    tailscale
     inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # WM stuff
