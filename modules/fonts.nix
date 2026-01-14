@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   fonts.packages = with pkgs; [
     texlivePackages.jetbrainsmono-otf
     texlivePackages.fontawesome
     nerd-fonts.symbols-only
     monocraft
+    miracode
   ];
 }
