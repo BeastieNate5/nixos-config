@@ -75,9 +75,6 @@
     ffuf
 
     # LSPs
-    gopls
-    typescript-language-server
-    rust-analyzer
     nixd
   ];
 
