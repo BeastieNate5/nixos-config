@@ -13,6 +13,7 @@
 
     # Tools
     vim
+    pavucontrol
     nh
     git
     zsh
