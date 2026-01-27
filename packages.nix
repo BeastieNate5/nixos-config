@@ -48,6 +48,7 @@
     mako
     wofi
     waybar
+    quickshell
 
     # Dev
     #gcc
