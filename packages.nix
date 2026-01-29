@@ -37,6 +37,7 @@
     ffmpeg
     tailscale
     samba
+    wl-mirror
     inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # WM stuff
