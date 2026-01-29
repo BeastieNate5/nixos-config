@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     # Desktop Applications
     discord
+    obsidian
     nwg-look
     steam
     gamescope
