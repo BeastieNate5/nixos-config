@@ -16,6 +16,7 @@
     # Tools
     vim
     pavucontrol
+    bluez
     nh
     git
     zsh
