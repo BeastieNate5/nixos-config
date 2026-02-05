@@ -24,6 +24,9 @@
   networking.hostName = "oracle";
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth.enable =  true;
+  hardware.bluetooth.powerOnBoot = true;
+
   # Set your time zone.
   time.timeZone = "America/New_York";
 
