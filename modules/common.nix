@@ -2,12 +2,12 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ ... }:
-
+{ inputs, ... }:
 {
   imports = [
     ../packages.nix
     ../bundler.nix
+    inputs.home-manager.nixosModules.default
   ];
 
   nix.settings.experimental-features = [
@@ -22,6 +22,11 @@
 
   # Set your time zone.
   time.timeZone = "America/New_York";
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users.nate = import ../home.nix;
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
