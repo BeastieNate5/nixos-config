@@ -9,6 +9,9 @@
 
     programs.zsh = {
         enable = true;
+        autosuggestion.enable = true;
+        syntaxHighlighting.enable = true;
+
         shellAliases = {
             c = "clear";
             n = "nvim";
@@ -20,8 +23,9 @@
         };
         oh-my-zsh = {
             enable = true;
-            plugins = ["git" "colored-man-pages" "zsh-syntax-highlighting" "zsh-autosuggestions" "nix-shell"];
+            plugins = ["git" "colored-man-pages"];
         };
+
     };
 
     programs.starship.enable = true;
