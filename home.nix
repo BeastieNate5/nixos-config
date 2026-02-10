@@ -9,6 +9,15 @@
 
     programs.zsh = {
         enable = true;
+        shellAliases = {
+            c = "clear";
+            n = "nvim";
+            ls = "eza --icons";
+            ll = "eza --icons -la";
+            lt = "eza --tree --icons";
+            po = "poweroff";
+            ff = "fastfetch";
+        };
         oh-my-zsh = {
             enable = true;
             plugins = ["git" "colored-man-pages" "zsh-syntax-highlighting" "zsh-autosuggestions" "nix-shell"];
