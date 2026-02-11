@@ -38,5 +38,7 @@
         SAVEHIST = 1000;
         _JAVA_AWT_WM_NONREPARENTING = 1;
     };
+
+    home.file.".config/mako/config".source = ./dotfiles/mako/config;
 }
 
