@@ -41,7 +41,7 @@
 
     home.file = {
         ".config/mako/config".source = ./dotfiles/mako/config;
-        ".config/niri/config.kdl".source  = ./dotfiles/niri/config.kdl;
+        ".config/niri/config.kdl".source = ./dotfiles/niri/config.kdl;
     };
 }
 
