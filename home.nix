@@ -30,6 +30,23 @@
 
     programs.starship.enable = true;
 
+    programs.git = {
+        enable = true;
+
+        settings = {
+            user = {
+                email = "nhagan345@gamil.com";
+                name = "0x2B";
+            };
+        
+            alias = {
+                st = "status";
+                ll = "log --oneline";
+                cm = "commit -m";
+            };
+        };
+    };
+
     home.sessionVariables = {
         EDITOR = "nvim";
         VISUAL = "nvim";
