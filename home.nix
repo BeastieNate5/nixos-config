@@ -43,6 +43,8 @@
                 st = "status";
                 ll = "log --oneline";
                 cm = "commit -m";
+                pl = "pull";
+                ph = "push";
             };
         };
     };
