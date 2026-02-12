@@ -21,6 +21,7 @@
             po = "poweroff";
             ff = "fastfetch";
             ssh = "kitty +kitten ssh";
+            barreload = "pkill waybar; niri msg action spawn -- 'waybar'";
         };
         oh-my-zsh = {
             enable = true;
