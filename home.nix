@@ -20,6 +20,7 @@
             lt = "eza --tree --icons";
             po = "poweroff";
             ff = "fastfetch";
+            ssh = "kitty +kitten ssh";
         };
         oh-my-zsh = {
             enable = true;
