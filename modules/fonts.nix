@@ -3,7 +3,7 @@
   fonts.packages = with pkgs; [
     texlivePackages.jetbrainsmono-otf
     texlivePackages.fontawesome
-    nerd-fonts.symbols-only
+    nerd-fonts.jetbrains-mono
     monocraft
     miracode
   ];
