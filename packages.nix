@@ -82,6 +82,9 @@
 
     # LSPs
     nixd
+
+    # other
+    sddm-astronaut
   ];
 
   programs.firefox.enable = true;
