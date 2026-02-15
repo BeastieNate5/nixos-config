@@ -1,4 +1,9 @@
 { pkgs, inputs, ... }:
+let
+  custom-astronaut = pkgs.sddm-astronaut.override {
+    embeddedTheme = "hyprland_kath";
+  };
+in
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -84,7 +89,8 @@
     nixd
 
     # Other
-    sddm-astronaut
+    custom-astronaut
+    kdePackages.qtmultimedia
   ];
 
   programs.firefox.enable = true;

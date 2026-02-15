@@ -1,7 +1,10 @@
 {pkgs, ...}: {
     services.displayManager.sddm = {
         enable = true;
-        theme = "${pkgs.sddm-astronaut}/share/sddm/themes";
+        theme = "sddm-astronaut-theme";
+        extraPackages = [
+          pkgs.sddm-astronaut
+        ];
     };
 
     services.displayManager.sddm.wayland.enable = true;
