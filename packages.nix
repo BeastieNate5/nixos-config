@@ -83,7 +83,7 @@
     # LSPs
     nixd
 
-    # other
+    # Other
     sddm-astronaut
   ];
 

@@ -6,5 +6,6 @@
     ./modules/users.nix
     ./modules/fonts.nix
     ./modules/services.nix
+    ./modules/displayManager.nix
   ];
 }
