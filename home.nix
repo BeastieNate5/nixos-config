@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
     home.username = "nate";
     home.homeDirectory = "/home/nate";
@@ -63,6 +63,7 @@
     home.file = {
         ".config/mako/config".source = ./dotfiles/mako/config;
         ".config/niri/config.kdl".source = ./dotfiles/niri/config.kdl;
+        ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/dotfiles/nvim";
     };
 }
 
