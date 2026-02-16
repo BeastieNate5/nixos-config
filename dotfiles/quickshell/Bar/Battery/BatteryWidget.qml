@@ -33,7 +33,7 @@ Text {
     }
     Process {
         id: fetchBattery     
-        command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || echo 100"]
+        command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || cat /sys/class/power_supply/BAT1/capacity 2>/dev/null || echo 100"]
         stdout: SplitParser {
             onRead: data => {
                 if (!data) return
@@ -46,7 +46,7 @@ Text {
 
     Process {
         id: batteryStatus
-        command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/status 2>/dev/null || echo Full"]
+        command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/status 2>/dev/null || cat /sys/class/power_supply/BAT1/status 2>/dev/null || echo Full"]
         stdout: SplitParser {
             onRead: data => {
                 if (!data) return
