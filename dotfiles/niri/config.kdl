@@ -69,6 +69,12 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 cursor {
     xcursor-theme "Adwaita"
     xcursor-size 16
