@@ -67,6 +67,7 @@ in
         "mako/config".source = "${dotfiles}/mako/config";
         "niri/config.kdl".source = "${dotfiles}/niri/config.kdl";
         nvim.source = "${dotfiles}/nvim";
+        quickshell.source = "${dotfiles}/quickshell";
     };
 }
 
