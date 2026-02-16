@@ -1,4 +1,7 @@
 { config, ... }:
+let
+  dotfiles = config.lib.file.mkOutOfStoreSymlink "/home/nate/nixos-config/dotfiles";
+in
 {
     home.username = "nate";
     home.homeDirectory = "/home/nate";
@@ -60,10 +63,10 @@
         _JAVA_AWT_WM_NONREPARENTING = 1;
     };
 
-    home.file = {
-        ".config/mako/config".source = ./dotfiles/mako/config;
-        ".config/niri/config.kdl".source = ./dotfiles/niri/config.kdl;
-        ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-config/dotfiles/nvim";
+    xdg.configFile = {
+        "mako/config".source = "${dotfiles}/mako/config";
+        "niri/config.kdl".source = "${dotfiles}/niri/config.kdl";
+        nvim.source = "${dotfiles}/nvim";
     };
 }
 
