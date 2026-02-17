@@ -47,5 +47,12 @@
         specialArgs = { inherit inputs; };
         modules = [ ./hosts/oracle/configuration.nix ];
       };
+
+      nixosConfigurations.yorha = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [ ./hosts/yorha/configuration.nix ];
+      };
+
     };
 }
