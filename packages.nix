@@ -16,6 +16,7 @@ in
     gamescope
     networkmanagerapplet
     audacity
+    pcsx2
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # Tools
