@@ -66,6 +66,7 @@ in
     xdg.configFile = {
         "mako/config".source = "${dotfiles}/mako/config";
         "niri/config.kdl".source = "${dotfiles}/niri/config.kdl";
+        "kitty/kitty.conf".source = "${dotfiles}/kitty/kitty.conf";
         nvim.source = "${dotfiles}/nvim";
         quickshell.source = "${dotfiles}/quickshell";
     };
