@@ -1,11 +1,12 @@
-{pkgs, ...}: {
-    services.displayManager.sddm = {
-        enable = true;
-        theme = "sddm-astronaut-theme";
-        extraPackages = [
-          pkgs.sddm-astronaut
-        ];
-    };
+{ pkgs, ... }:
+{
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "sddm-astronaut-theme";
+    extraPackages = [
+      pkgs.sddm-astronaut
+    ];
+  };
 
-    services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 }
