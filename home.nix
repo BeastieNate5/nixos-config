@@ -43,7 +43,7 @@ in
 
     settings = {
       user = {
-        email = "nhagan345@gamil.com";
+        email = "nhagan345@gmail.com";
         name = "0x2B";
       };
 
