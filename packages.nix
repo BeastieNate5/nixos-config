@@ -17,6 +17,7 @@ in
     networkmanagerapplet
     audacity
     pcsx2
+    wireshark
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # Tools
