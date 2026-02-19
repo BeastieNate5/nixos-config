@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
   dotfiles = config.lib.file.mkOutOfStoreSymlink "/home/nate/nixos-config/dotfiles";
 in
@@ -34,6 +34,41 @@ in
       ];
     };
 
+  };
+
+  programs.tmux = {
+    enable = true;
+    plugins = with pkgs.tmuxPlugins; [
+      {
+        plugin = tokyo-night-tmux;
+        extraConfig = ''
+          set -g @tokyo-night-tmux_theme storm
+          set -g @tokyo-night-tmux_transparent 1
+        '';
+      }
+    ];
+    extraConfig = ''
+      unbind C-b
+
+      set -g prefix C-s
+
+      set -g base-index 1
+      setw -g pane-base-index 1
+
+      set -g renumber-windows on
+
+      bind -r "<" swap-window -d -t -1
+      bind -r ">" swap-window -d -t +1
+
+      bind Space last-window
+
+      bind | split-window -h
+      bind - split-window -v
+      unbind '"'
+      unbind %
+
+      bind r source-file ~/.config/tmux/tmux.conf
+    '';
   };
 
   programs.starship.enable = true;
