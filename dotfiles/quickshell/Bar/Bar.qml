@@ -15,6 +15,10 @@ Scope {
         model: Quickshell.screens
 
         PanelWindow {
+            required property var modelData
+
+            screen: modelData
+
             anchors {
                 left: true
                 right: true
