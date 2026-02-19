@@ -60,7 +60,7 @@ in
     quickshell
 
     # Dev
-    #gcc
+    gcc
     #nodejs
     #go
     (python3.withPackages (
