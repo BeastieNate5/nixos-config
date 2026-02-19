@@ -7,5 +7,6 @@
     ./modules/fonts.nix
     ./modules/services.nix
     ./modules/displayManager.nix
+    ./modules/nixLD.nix
   ];
 }
