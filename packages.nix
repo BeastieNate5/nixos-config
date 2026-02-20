@@ -18,6 +18,7 @@ in
     audacity
     pcsx2
     wireshark
+    postman
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # Tools
