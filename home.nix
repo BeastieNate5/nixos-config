@@ -67,6 +67,8 @@ in
       unbind '"'
       unbind %
 
+      set -sg escape-time 10
+
       bind r source-file ~/.config/tmux/tmux.conf
     '';
   };
