@@ -39,6 +39,7 @@ in
     eza
     bat
     swww
+    ffmpeg
     file
     pywal
     btop
