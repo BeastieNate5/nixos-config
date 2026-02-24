@@ -11,8 +11,9 @@ Text {
     text: {
         const icons = ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
         const chargingIcons = ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+        const index = Math.max(0, Math.min(Math.floor(batteryLevel / 10), 9))
 
-        const selectedIcon = batteryCharging ? chargingIcons[Math.min(Math.floor(batteryLevel/10),10)-1] : icons[Math.min(Math.floor(batteryLevel/10),10)-1]
+        const selectedIcon = batteryCharging ? chargingIcons[index] : icons[index]
         selectedIcon + " " + batteryLevel.toString() + "%"
     }
     
