@@ -20,6 +20,7 @@ vim.lsp.enable("html")
 vim.lsp.enable("cssls")
 vim.lsp.enable("nixd")
 vim.lsp.enable("qmlls")
+vim.lsp.enable("jdtls")
 
 vim.diagnostic.config({
   virtual_text = true, -- Enables inline error messages
