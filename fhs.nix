@@ -4,6 +4,7 @@ pkgs.buildFHSEnv ( let
 in base // {
     name = "fhs";
     targetPkgs = pkgs: (base.targetPkgs pkgs) ++ (with pkgs; [
+        pkgs.pkgsi686Linux.glibc
         pkg-config
         ncurses
     ]);
