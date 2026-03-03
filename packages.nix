@@ -103,6 +103,7 @@ in
   programs.niri.enable = true;
   programs.xwayland.enable = true;
   programs.steam.enable = true;
+  programs.gamescope.enable = true;
 
   virtualisation.docker.enable = true;
 }
