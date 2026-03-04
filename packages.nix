@@ -19,6 +19,7 @@ in
     pcsx2
     wireshark
     postman
+    obs-studio
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # Tools
