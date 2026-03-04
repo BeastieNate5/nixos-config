@@ -10,6 +10,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/common.nix
+    ../../modules/distributed-builds.nix
   ];
 
   networking.hostName = "tailless";
