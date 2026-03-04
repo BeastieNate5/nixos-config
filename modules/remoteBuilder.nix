@@ -7,9 +7,9 @@ in
     enable = lib.mkEnableOption "Distributed Nix builder Service";
 
     sshIP = lib.mkOption {
-        type = lib.types.str;
-        description = "IP to bind for SSH server";
-        example = "100.64.0.1";
+      type = lib.types.str;
+      description = "IP to bind for SSH server";
+      example = "100.64.0.1";
     };
   };
 
@@ -19,22 +19,25 @@ in
       group = "remoteBuild";
       useDefaultShell = true;
 
-      openssh.authorizedKeys.keyFiles = [../keys/remotebuild.pub];
+      openssh.authorizedKeys.keyFiles = [ ../keys/remotebuild.pub ];
     };
 
-    users.groups.remoteBuild = {};
+    users.groups.remoteBuild = { };
 
     services.openssh = {
-        enable = true;
-        listenAddresses = [
-          { addr = cfg.sshIP; port = 22; }
-        ];
+      enable = true;
+      listenAddresses = [
+        {
+          addr = cfg.sshIP;
+          port = 22;
+        }
+      ];
     };
 
     systemd.services.sshd.after = [ "tailscaled.service" ];
     systemd.services.sshd.requires = [ "tailscaled.service" ];
 
-    nix.settings.trusted-users = ["remoteBuild"];
+    nix.settings.trusted-users = [ "remoteBuild" ];
 
   };
 

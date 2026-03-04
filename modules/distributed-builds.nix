@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   nix.distributedBuilds = true;
-  nix.settings.builders-use-substitutes = true; 
+  nix.settings.builders-use-substitutes = true;
 
   nix.buildMachines = [
     {
@@ -9,7 +9,11 @@
       sshUser = "remoteBuild";
       sshKey = "/root/.ssh/remotebuild";
       system = pkgs.stdenv.hostPlatform.system;
-      supportedFeatures = [ "nixos-test" "big-parallel" "kvm" ];
+      supportedFeatures = [
+        "nixos-test"
+        "big-parallel"
+        "kvm"
+      ];
     }
   ];
 }
