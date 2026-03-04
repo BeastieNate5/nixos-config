@@ -8,7 +8,13 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/common.nix
+    ../../modules/remoteBuilder.nix
   ];
+
+  services.remoteBuilder = {
+    enable = true;
+    sshIP = "100.91.121.92";
+  };
 
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];

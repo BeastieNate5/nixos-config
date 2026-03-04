@@ -24,6 +24,7 @@ in
     # Tools
     vim
     pavucontrol
+    noisetorch
     bluez
     nh
     git
@@ -104,6 +105,7 @@ in
   programs.xwayland.enable = true;
   programs.steam.enable = true;
   programs.gamescope.enable = true;
+  programs.noisetorch.enable = true;
 
   virtualisation.docker.enable = true;
 }
