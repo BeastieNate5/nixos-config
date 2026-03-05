@@ -20,6 +20,7 @@ in
     wireshark
     postman
     obs-studio
+    losslesscut-bin
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 
     # Tools
