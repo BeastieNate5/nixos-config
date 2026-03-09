@@ -10,5 +10,6 @@
     openssl
     curl
     expat
+    sleuthkit
   ];
 }
