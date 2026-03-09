@@ -94,6 +94,7 @@ in
     nmap
     gobuster
     ffuf
+    autopsy
 
     # LSPs
     nixd
