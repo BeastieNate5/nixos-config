@@ -88,6 +88,7 @@ in
     inputs.pwngdb.packages."${pkgs.stdenv.hostPlatform.system}".default
     #john
     hashcat
+    hydra
     ghidra-bin
     nmap
     gobuster
