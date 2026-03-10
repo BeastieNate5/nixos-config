@@ -33,12 +33,8 @@ in
         }
       ];
     };
-
-    systemd.services.sshd.after = [ "tailscaled.service" ];
-    systemd.services.sshd.requires = [ "tailscaled.service" ];
-
+    
     nix.settings.trusted-users = [ "remoteBuild" ];
-
   };
 
 }

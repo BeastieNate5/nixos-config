@@ -13,7 +13,7 @@
 
   services.remoteBuilder = {
     enable = true;
-    sshIP = "100.91.121.92";
+    sshIP = "0.0.0.0";
   };
 
   hardware.graphics.enable = true;
