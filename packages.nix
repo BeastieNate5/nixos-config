@@ -35,6 +35,7 @@ in
     starship
     btop
     wget
+    wl-clipboard
     neovim
     kitty
     ly
