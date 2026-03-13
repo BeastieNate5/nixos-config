@@ -49,6 +49,7 @@ in
     pywal
     btop
     mpv
+    unzip
     ffmpeg
     tailscale
     samba
