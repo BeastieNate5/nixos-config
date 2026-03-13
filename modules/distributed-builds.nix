@@ -2,6 +2,7 @@
 {
   nix.distributedBuilds = true;
   nix.settings.builders-use-substitutes = true;
+  nix.settings.fallback = true;
 
   nix.buildMachines = [
     {
