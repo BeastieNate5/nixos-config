@@ -52,6 +52,8 @@ in
 
       set -g prefix C-s
 
+      set -g mouse on
+
       set -g base-index 1
       setw -g pane-base-index 1
 
