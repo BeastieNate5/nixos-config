@@ -96,6 +96,7 @@ in
     nmap
     gobuster
     ffuf
+    aircrack-ng
 
     # LSPs
     nixd
