@@ -97,6 +97,7 @@ in
     gobuster
     ffuf
     aircrack-ng
+    wirelesstools
 
     # LSPs
     nixd
