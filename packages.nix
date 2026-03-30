@@ -20,6 +20,7 @@ in
     wireshark
     postman
     obs-studio
+    qbittorrent
     losslesscut-bin
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     lunar-client
