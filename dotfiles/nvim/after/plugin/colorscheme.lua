@@ -1,4 +1,4 @@
-function SetColorScheme(colorscheme)
+--[[function SetColorScheme(colorscheme)
     color = color or "tokyonight"
     vim.cmd.colorscheme(color)
 
@@ -9,3 +9,4 @@ function SetColorScheme(colorscheme)
 end
 
 SetColorScheme()
+]]
