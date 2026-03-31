@@ -47,7 +47,12 @@ in
     swww
     ffmpeg
     file
-    pywal
+    (pywal16.override {
+      withColorz = true;
+      withModernColorthief = true;
+      withFastColorthief = true;
+      withHaishoku = true;
+    })
     btop
     mpv
     unzip
