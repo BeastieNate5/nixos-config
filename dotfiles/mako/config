@@ -32,9 +32,9 @@ width=299
 height=99
 
 # margin of notification which is margin for the list of notification block( value in px ).
-outer-margin=3
+outer-margin=0
 # Margin of each individual notification
-margin=0
+margin=10
 
 # Set padding on each side to the size specified by directional( value in px )
 padding=10
