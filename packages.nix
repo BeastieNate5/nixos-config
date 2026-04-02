@@ -44,7 +44,7 @@ in
     fastfetch
     eza
     bat
-    swww
+    awww
     ffmpeg
     file
     (pywal16.override {
