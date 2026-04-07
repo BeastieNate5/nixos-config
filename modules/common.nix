@@ -16,6 +16,7 @@
   ];
 
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "systemd-resolved";
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
