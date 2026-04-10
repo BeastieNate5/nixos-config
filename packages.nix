@@ -11,6 +11,7 @@ in
     # Desktop Applications
     discord
     obsidian
+    aseprite
     nwg-look
     steam
     gamescope
