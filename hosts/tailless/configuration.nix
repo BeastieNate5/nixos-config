@@ -12,6 +12,6 @@
     ../../modules/common.nix
     ../../modules/distributed-builds.nix
   ];
-
+  powerManagement.cpuFreqGovernor = "performance";
   networking.hostName = "tailless";
 }
