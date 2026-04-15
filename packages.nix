@@ -3,6 +3,10 @@ let
   custom-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "hyprland_kath";
   };
+  qylock-theme = pkgs.callPackage ./qylock-sddm.nix {
+    theme = "nier-automata";
+    rodinFont = ./fonts/FOT-Rodin-Pro-DB.otf;
+  };
 in
 {
   nixpkgs.config.allowUnfree = true;
@@ -112,6 +116,7 @@ in
     # Other
     custom-astronaut
     kdePackages.qtmultimedia
+    qylock-theme
   ];
 
   programs.firefox.enable = true;

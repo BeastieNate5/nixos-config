@@ -2,11 +2,25 @@
 {
   services.displayManager.sddm = {
     enable = true;
-    theme = "sddm-astronaut-theme";
-    extraPackages = [
-      pkgs.sddm-astronaut
-    ];
-  };
+    wayland.enable = true;
 
-  services.displayManager.sddm.wayland.enable = true;
+    theme = "nier-automata";
+    extraPackages = [
+        pkgs.quickshell
+        pkgs.qt6.qtdeclarative
+        pkgs.qt6.qtmultimedia
+        pkgs.qt6.qtmultimedia
+        pkgs.qt6.qtsvg
+        pkgs.qt6.qt5compat
+        pkgs.gst_all_1.gst-plugins-base
+        pkgs.gst_all_1.gst-plugins-good
+    ];
+
+    settings = {
+      Theme = {
+          CursorTheme = "Adwaita";
+          CursorSize = 24;
+      };
+    };
+  };
 }
