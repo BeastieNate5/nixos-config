@@ -14,6 +14,7 @@ in
   environment.systemPackages = with pkgs; [
     # Desktop Applications
     discord
+    vesktop
     obsidian
     aseprite
     nwg-look
