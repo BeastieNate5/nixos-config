@@ -1,14 +1,15 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, qylock-theme, ... }:
 let
   custom-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "hyprland_kath";
   };
-  qylock-theme = pkgs.callPackage ./qylock-sddm.nix {
-    theme = "nier-automata";
+  qylockTheme = pkgs.callPackage ./qylock-sddm.nix {
+    theme = qylock-theme;
     rodinFont = ./fonts/FOT-Rodin-Pro-DB.otf;
   };
   qylock-lock = pkgs.callPackage ./qylock-lock.nix {
-    qylock-sddm = qylock-theme;    
+    qylock-sddm = qylockTheme;    
+    qylock-theme = qylock-theme;
   };
 in
 {
@@ -121,7 +122,7 @@ in
     # Other
     custom-astronaut
     kdePackages.qtmultimedia
-    qylock-theme
+    qylockTheme
   ];
 
   programs.firefox.enable = true;

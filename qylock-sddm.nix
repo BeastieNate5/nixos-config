@@ -12,7 +12,6 @@ stdenv.mkDerivation {
         rev = "a45a5ec4a66e42a86b83fac7d00159b598851f58";
     };
 
-
     installPhase = ''
         mkdir -p $out/share/sddm/themes/
         mkdir -p $out/share/quickshell/qylock

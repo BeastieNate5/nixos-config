@@ -1,4 +1,4 @@
-{ pkgs, qylock-sddm }:
+{ pkgs, qylock-sddm, qylock-theme }:
 pkgs.writeShellApplication {
     name = "qylock-lock";
 
@@ -20,8 +20,8 @@ pkgs.writeShellApplication {
         export GST_PLUGIN_SYSTEM_PATH_1_0="${pkgs.gst_all_1.gst-plugins-base}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-good}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-bad}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-ugly}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-libav}/lib/gstreamer-1.0"
 
         export XDG_SESSION_TYPE=wayland
-        export QS_THEME=nier-automata
-        export QS_THEME_PATH=${qylock-sddm}/share/quickshell/qylock/themes/nier-automata
+        export QS_THEME=${qylock-theme}
+        export QS_THEME_PATH=${qylock-sddm}/share/quickshell/qylock/themes/${qylock-theme}
         export QUICKSHELL_DEBUG_WSI=1
 
         killall -9 hyprlock swaylock wlogout 2>/dev/null || true

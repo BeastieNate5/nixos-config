@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ inputs, ... }:
+{ inputs, username, ... }:
 {
   imports = [
     ../packages.nix
@@ -25,7 +25,10 @@
   time.timeZone = "America/New_York";
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { 
+      inherit inputs; 
+      inherit username;
+    };
     users.nate = import ../home.nix;
   };
 

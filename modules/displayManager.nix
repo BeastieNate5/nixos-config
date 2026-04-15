@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, qylock-theme, ... }:
 {
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
 
-    theme = "nier-automata";
+    theme = qylock-theme;
     extraPackages = [
         pkgs.quickshell
         pkgs.qt6.qtdeclarative

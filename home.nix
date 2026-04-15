@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, ... }:
 let
   dotfiles = config.lib.file.mkOutOfStoreSymlink "/home/nate/nixos-config/dotfiles";
 in
 {
-  home.username = "nate";
-  home.homeDirectory = "/home/nate";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
 
   home.stateVersion = "25.05";
 

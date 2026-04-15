@@ -32,25 +32,39 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      username = "nate";
+      qylock-theme = "nier-automata";
     in
     {
       formatter."${system}" = nixpkgs.legacyPackages."${system}".nixfmt-tree;
 
       nixosConfigurations.tailless = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = { 
+          inherit inputs; 
+          inherit username;
+          inherit qylock-theme;
+        };
         modules = [ ./hosts/tailless/configuration.nix ];
       };
 
       nixosConfigurations.oracle = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = { 
+          inherit inputs; 
+          inherit username;
+          inherit qylock-theme;
+        };
         modules = [ ./hosts/oracle/configuration.nix ];
       };
 
       nixosConfigurations.yorha = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = { 
+           inherit inputs; 
+           inherit username;
+           inherit qylock-theme;
+        };
         modules = [ ./hosts/yorha/configuration.nix ];
       };
 

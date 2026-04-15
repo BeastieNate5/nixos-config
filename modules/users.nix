@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
-  users.users.nate = {
+  users.users.${username} = {
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [
