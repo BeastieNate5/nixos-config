@@ -32,8 +32,6 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      username = "nate";
-      qylock-theme = "nier-automata";
     in
     {
       formatter."${system}" = nixpkgs.legacyPackages."${system}".nixfmt-tree;
@@ -42,9 +40,7 @@
         inherit system;
         specialArgs = { 
           inherit inputs; 
-          inherit username;
-          inherit qylock-theme;
-        };
+        } // (import ./hosts/default-settings.nix // import ./hosts/tailless/settings.nix);
         modules = [ ./hosts/tailless/configuration.nix ];
       };
 
@@ -52,9 +48,7 @@
         inherit system;
         specialArgs = { 
           inherit inputs; 
-          inherit username;
-          inherit qylock-theme;
-        };
+        } // (import ./hosts/default-settings.nix // import ./hosts/oracle/settings.nix);
         modules = [ ./hosts/oracle/configuration.nix ];
       };
 
@@ -62,9 +56,7 @@
         inherit system;
         specialArgs = { 
            inherit inputs; 
-           inherit username;
-           inherit qylock-theme;
-        };
+        } // (import ./hosts/default-settings.nix // import ./hosts/yorha/settings.nix);
         modules = [ ./hosts/yorha/configuration.nix ];
       };
 
