@@ -7,6 +7,9 @@ let
     theme = "nier-automata";
     rodinFont = ./fonts/FOT-Rodin-Pro-DB.otf;
   };
+  qylock-lock = pkgs.callPackage ./qylock-lock.nix {
+    qylock-sddm = qylock-theme;    
+  };
 in
 {
   nixpkgs.config.allowUnfree = true;
@@ -80,6 +83,7 @@ in
     wofi
     waybar
     quickshell
+    qylock-lock
 
     # Dev
     gcc
