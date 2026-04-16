@@ -24,7 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri-src =  {
+    niri-src = {
       url = "github:YaLTeR/niri";
       inputs.rust-overlay.follows = "";
     };
@@ -38,18 +38,21 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      mkHost = hostname: nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {
-          inherit inputs;
-        } // (import ./hosts/default-settings.nix // import ./hosts/${hostname}/settings.nix);
-        modules = [
-          ./hosts/${hostname}/configuration.nix
-          {
-            nixpkgs.overlays = [ niri-src.overlays.default ];
+      mkHost =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit inputs;
           }
-        ];
-      };
+          // (import ./hosts/default-settings.nix // import ./hosts/${hostname}/settings.nix);
+          modules = [
+            ./hosts/${hostname}/configuration.nix
+            {
+              nixpkgs.overlays = [ niri-src.overlays.default ];
+            }
+          ];
+        };
     in
     {
       formatter."${system}" = nixpkgs.legacyPackages."${system}".nixfmt-tree;

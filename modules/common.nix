@@ -25,8 +25,8 @@
   time.timeZone = "America/New_York";
 
   home-manager = {
-    extraSpecialArgs = { 
-      inherit inputs; 
+    extraSpecialArgs = {
+      inherit inputs;
       inherit username;
     };
     users.nate = import ../home.nix;

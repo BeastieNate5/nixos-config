@@ -34,9 +34,9 @@ in
       ];
     };
 
-    networking.firewall.allowedTCPPorts = [];
-    networking.firewall.trustedInterfaces = ["tailscale0"];
-    
+    networking.firewall.allowedTCPPorts = [ ];
+    networking.firewall.trustedInterfaces = [ "tailscale0" ];
+
     nix.settings.trusted-users = [ "remoteBuild" ];
   };
 

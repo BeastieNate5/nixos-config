@@ -1,3 +1,3 @@
 {
-    qylock-theme = "nier-automata";
+  qylock-theme = "nier-automata";
 }

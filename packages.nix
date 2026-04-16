@@ -1,4 +1,9 @@
-{ pkgs, inputs, qylock-theme, ... }:
+{
+  pkgs,
+  inputs,
+  qylock-theme,
+  ...
+}:
 let
   custom-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "hyprland_kath";
@@ -8,7 +13,7 @@ let
     rodinFont = ./fonts/FOT-Rodin-Pro-DB.otf;
   };
   qylock-lock = pkgs.callPackage ./qylock-lock.nix {
-    qylock-sddm = qylockTheme;    
+    qylock-sddm = qylockTheme;
     qylock-theme = qylock-theme;
   };
 in

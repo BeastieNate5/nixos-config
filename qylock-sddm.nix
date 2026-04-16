@@ -1,35 +1,39 @@
-{ 
+{
   stdenv,
   theme ? "nier-automata",
-  rodinFont ? null
+  rodinFont ? null,
 }:
 stdenv.mkDerivation {
-    pname = "qlock";
-    version = "0.0.1";
+  pname = "qlock";
+  version = "0.0.1";
 
-    src = fetchGit {
-        url = "https://github.com/Darkkal44/qylock.git";
-        rev = "a45a5ec4a66e42a86b83fac7d00159b598851f58";
-    };
+  src = fetchGit {
+    url = "https://github.com/Darkkal44/qylock.git";
+    rev = "a45a5ec4a66e42a86b83fac7d00159b598851f58";
+  };
 
-    installPhase = ''
-        mkdir -p $out/share/sddm/themes/
-        mkdir -p $out/share/quickshell/qylock
+  installPhase = ''
+    mkdir -p $out/share/sddm/themes/
+    mkdir -p $out/share/quickshell/qylock
 
-        cp -r ./themes/${theme} $out/share/sddm/themes
-        cp -r ./Assets $out/share/sddm/themes/${theme}
+    cp -r ./themes/${theme} $out/share/sddm/themes
+    cp -r ./Assets $out/share/sddm/themes/${theme}
 
-        cp -r ./quickshell-lockscreen/* $out/share/quickshell/qylock
-        cp -r ./Assets $out/share/quickshell/qylock
+    cp -r ./quickshell-lockscreen/* $out/share/quickshell/qylock
+    cp -r ./Assets $out/share/quickshell/qylock
 
-        cp -r ./themes $out/share/quickshell/qylock/themes
+    cp -r ./themes $out/share/quickshell/qylock/themes
 
-        ${if theme == "nier-automata" then ''
+    ${
+      if theme == "nier-automata" then
+        ''
           if [ -n "${toString rodinFont}" ]; then
             cp "${rodinFont}" $out/share/sddm/themes/${theme}/font/
           fi
-        '' else ""}
+        ''
+      else
+        ""
+    }
 
-    '';
+  '';
 }
-
