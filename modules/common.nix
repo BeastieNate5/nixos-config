@@ -29,7 +29,7 @@
       inherit inputs;
       inherit username;
     };
-    users.nate = import ../home.nix;
+    users.${username} = import ../home.nix;
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
