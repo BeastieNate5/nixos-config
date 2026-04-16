@@ -23,41 +23,41 @@
       url = "github:pwndbg/pwndbg";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri-src =  {
+      url = "github:YaLTeR/niri";
+      inputs.rust-overlay.follows = "";
+    };
   };
 
   outputs =
     {
       nixpkgs,
+      niri-src,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
+      mkHost = hostname: nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit inputs;
+        } // (import ./hosts/default-settings.nix // import ./hosts/${hostname}/settings.nix);
+        modules = [
+          ./hosts/${hostname}/configuration.nix
+          {
+            nixpkgs.overlays = [ niri-src.overlays.default ];
+          }
+        ];
+      };
     in
     {
       formatter."${system}" = nixpkgs.legacyPackages."${system}".nixfmt-tree;
 
-      nixosConfigurations.tailless = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { 
-          inherit inputs; 
-        } // (import ./hosts/default-settings.nix // import ./hosts/tailless/settings.nix);
-        modules = [ ./hosts/tailless/configuration.nix ];
-      };
-
-      nixosConfigurations.oracle = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { 
-          inherit inputs; 
-        } // (import ./hosts/default-settings.nix // import ./hosts/oracle/settings.nix);
-        modules = [ ./hosts/oracle/configuration.nix ];
-      };
-
-      nixosConfigurations.yorha = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { 
-           inherit inputs; 
-        } // (import ./hosts/default-settings.nix // import ./hosts/yorha/settings.nix);
-        modules = [ ./hosts/yorha/configuration.nix ];
+      nixosConfigurations = {
+        tailless = mkHost "tailless";
+        oracle = mkHost "oracle";
+        yorha = mkHost "yorha";
       };
 
     };
