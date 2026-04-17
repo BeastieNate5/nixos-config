@@ -10,7 +10,13 @@ let
   };
   qylockTheme = pkgs.callPackage ./qylock-sddm.nix {
     theme = qylock-theme;
-    rodinFont = ./fonts/FOT-Rodin-Pro-DB.otf;
+    nierFont = ./fonts/FOT-Rodin-Pro-DB.otf;
+    terrariaFont = ./fonts/Andy-Bold.ttf;
+    genshinFont = ./fonts/zhcn.ttf;
+    swordFont = ./fonts/The-Last-Shuriken.ttf;
+    minecraftFont = ./fonts/Minecraft.ttf;
+    hsrFont = ./fonts/DIN-Next.ttf;
+    osuFont = ./fonts/Torus-Regular.otf;
   };
   qylock-lock = pkgs.callPackage ./qylock-lock.nix {
     qylock-sddm = qylockTheme;
