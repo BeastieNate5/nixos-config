@@ -7,15 +7,17 @@
   swordFont ? null,
   minecraftFont ? null,
   hsrFont ? null,
-  osuFont ? null
+  osuFont ? null,
 }:
 let
-  mkInstallFontCmds = {font, theme}: '' 
-    if [ -n "${toString font}" ]; then
-      mkdir -p $out/share/sddm/themes/${theme}/font/
-      cp "${font}" $out/share/sddm/themes/${theme}/font/
-    fi
-  '';
+  mkInstallFontCmds =
+    { font, theme }:
+    ''
+      if [ -n "${toString font}" ]; then
+        mkdir -p $out/share/sddm/themes/${theme}/font/
+        cp "${font}" $out/share/sddm/themes/${theme}/font/
+      fi
+    '';
 in
 stdenv.mkDerivation {
   pname = "qlock";
@@ -37,19 +39,40 @@ stdenv.mkDerivation {
 
     ${
       if theme == "nier-automata" then
-        mkInstallFontCmds {font = nierFont; theme = theme;}
+        mkInstallFontCmds {
+          font = nierFont;
+          theme = theme;
+        }
       else if theme == "terraria" then
-        mkInstallFontCmds {font = terrariaFont; theme = theme;}
+        mkInstallFontCmds {
+          font = terrariaFont;
+          theme = theme;
+        }
       else if theme == "Genshin" then
-        mkInstallFontCmds {font = genshinFont; theme = theme;}
+        mkInstallFontCmds {
+          font = genshinFont;
+          theme = theme;
+        }
       else if theme == "sword" then
-        mkInstallFontCmds {font = swordFont; theme = theme;}
+        mkInstallFontCmds {
+          font = swordFont;
+          theme = theme;
+        }
       else if theme == "minecraft" then
-        mkInstallFontCmds {font = minecraftFont; theme = theme;}
+        mkInstallFontCmds {
+          font = minecraftFont;
+          theme = theme;
+        }
       else if theme == "star-rail" then
-        mkInstallFontCmds {font = hsrFont; theme = theme;}
+        mkInstallFontCmds {
+          font = hsrFont;
+          theme = theme;
+        }
       else if theme == "osu" then
-        mkInstallFontCmds {font = osuFont; theme = theme;}
+        mkInstallFontCmds {
+          font = osuFont;
+          theme = theme;
+        }
       else
         ""
     }
