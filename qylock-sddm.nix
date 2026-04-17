@@ -20,9 +20,6 @@ stdenv.mkDerivation {
     cp -r ./Assets $out/share/sddm/themes/${theme}
 
     cp -r ./quickshell-lockscreen/* $out/share/quickshell/qylock
-    cp -r ./Assets $out/share/quickshell/qylock
-
-    cp -r ./themes $out/share/quickshell/qylock/themes
 
     ${
       if theme == "nier-automata" then
