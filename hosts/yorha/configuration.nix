@@ -21,9 +21,6 @@
   hardware.nvidia.open = true;
   hardware.nvidia.modesetting.enable = true;
 
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.loader.grub.copyKernels = false;
-
   networking.hostName = "yorha";
 
 }
