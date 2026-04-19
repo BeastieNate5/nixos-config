@@ -16,7 +16,11 @@
     sshIP = "0.0.0.0";
   };
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
   hardware.nvidia.modesetting.enable = true;

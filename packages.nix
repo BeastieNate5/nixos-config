@@ -34,6 +34,7 @@ in
     aseprite
     nwg-look
     steam
+    protonplus
     gamescope
     networkmanagerapplet
     audacity
@@ -140,9 +141,10 @@ in
   programs.zsh.enable = true;
   programs.niri.enable = true;
   programs.xwayland.enable = true;
-  programs.steam.enable = true;
   programs.gamescope.enable = true;
   programs.noisetorch.enable = true;
+
+  programs.steam.enable = true;
 
   virtualisation.docker.enable = true;
 }
