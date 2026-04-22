@@ -16,7 +16,6 @@ Scope {
 
         PanelWindow {
             required property var modelData
-
             screen: modelData
 
             anchors {
@@ -38,96 +37,37 @@ Scope {
                 width: parent.width - 100
                 color: Style.bgcolor
                 radius: 12
-
                 
                 RowLayout {
-                    anchors.fill: parent
-                    spacing: 0
-
-                    Item {
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        Layout.leftMargin: 17
-
-                        RowLayout {
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.left: parent.left
-
-                            Text {
-                                text: "left of bar"
-                                color: "#ffffff"
-                            }
-                        }
-
-                        
-                        /*
-                        Rectangle {
-                            anchors.fill: parent
-                            color: "transparent"
-                            border.color: "red"
-                            border.width: 1
-                        }
-                        */
-                        
-
-                    }
-
-
-                    Item {
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-
-                        RowLayout {
-                            anchors.verticalCenter: parent.verticalCenter 
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            WorkspacesWidget {}
-                        }
-
-                        /* 
-                        Rectangle {
-                            anchors.fill: parent
-                            color: "transparent"
-                            border.color: "red"
-                            border.width: 1
-                        }
-                        */ 
-                    }
-
-
-                    Item {
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        Layout.rightMargin: 17
-
-                        RowLayout {
-                            anchors.right: parent.right
-                            anchors.verticalCenter: parent.verticalCenter
-                            spacing: 7
-                            
-                            VolumeWidget {}
-                            SepWidget{}
-                            NetworkWidget {}
-                            SepWidget{}
-                            CpuWidget {}
-                            SepWidget{}
-                            MemWidget {}
-                            SepWidget {}
-                            BatteryWidget {}
-                            SepWidget {}
-                            TimeWidget {}
-                        }
-
-                        /*
-                        Rectangle {
-                            anchors.fill: parent
-                            color: "transparent"
-                            border.color: "red"
-                            border.width: 1
-                        }
-                        */
-                    }
+                    anchors.left: parent.left
+                    anchors.leftMargin: 17
+                    anchors.verticalCenter: parent.verticalCenter
+                    Text { text: "left of bar"; color: "#ffffff" }
                 }
 
+                RowLayout {
+                    anchors.centerIn: parent
+                    WorkspacesWidget {}
+                }
+
+                RowLayout {
+                    anchors.right: parent.right
+                    anchors.rightMargin: 17
+                    anchors.verticalCenter: parent.verticalCenter
+                    spacing: 7
+
+                    VolumeWidget {}
+                    SepWidget {}
+                    NetworkWidget {}
+                    SepWidget {}
+                    CpuWidget {}
+                    SepWidget {}
+                    MemWidget {}
+                    SepWidget {}
+                    BatteryWidget {}
+                    SepWidget {}
+                    TimeWidget {}
+                }
             }
         }
     }
