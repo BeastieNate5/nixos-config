@@ -10,65 +10,81 @@ import "Battery"
 import "Network"
 import "Volume"
 
-Scope {
-    Variants {
-        model: Quickshell.screens
 
-        PanelWindow {
-            required property var modelData
-            screen: modelData
+PanelWindow {
+    id: barRoot
+    required property var modelData
+    property var gamepopupHandle
 
-            anchors {
-                left: true
-                right: true
-                top: true
-            }
+    screen: modelData
 
-            implicitHeight: 30
-            color: "transparent"
+    anchors {
+        left: true
+        right: true
+        top: true
+    }
 
-            Rectangle {
-                id: barSurface
+    implicitHeight: 30
+    color: "transparent"
 
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.top: parent.top
-                anchors.bottom: parent.bottom
+    Rectangle {
+        id: barSurface
 
-                width: parent.width - 100
-                color: Style.bgcolor
-                radius: 12
-                
-                RowLayout {
-                    anchors.left: parent.left
-                    anchors.leftMargin: 17
-                    anchors.verticalCenter: parent.verticalCenter
-                    Text { text: "left of bar"; color: "#ffffff" }
-                }
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
 
-                RowLayout {
+        width: parent.width - 100
+        color: Style.bgcolor
+        radius: 12
+        
+        RowLayout {
+            anchors.left: parent.left
+            anchors.leftMargin: 17
+            anchors.verticalCenter: parent.verticalCenter
+
+            Item {
+                implicitWidth: 20
+                implicitHeight: 20
+                Text {
                     anchors.centerIn: parent
-                    WorkspacesWidget {}
+                    text: "󰋜"
+                    color: "white"
+                    font.family: Style.fontFamily
+                    font.pixelSize: Style.fontSize
                 }
 
-                RowLayout {
-                    anchors.right: parent.right
-                    anchors.rightMargin: 17
-                    anchors.verticalCenter: parent.verticalCenter
-                    spacing: 7
-
-                    VolumeWidget {}
-                    SepWidget {}
-                    NetworkWidget {}
-                    SepWidget {}
-                    CpuWidget {}
-                    SepWidget {}
-                    MemWidget {}
-                    SepWidget {}
-                    BatteryWidget {}
-                    SepWidget {}
-                    TimeWidget {}
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        barRoot.gamepopupHandle.visible = !barRoot.gamepopupHandle.visible;
+                    }
                 }
             }
+        }
+
+        RowLayout {
+            anchors.centerIn: parent
+            WorkspacesWidget {}
+        }
+
+        RowLayout {
+            anchors.right: parent.right
+            anchors.rightMargin: 17
+            anchors.verticalCenter: parent.verticalCenter
+            spacing: 7
+
+            VolumeWidget {}
+            SepWidget {}
+            NetworkWidget {}
+            SepWidget {}
+            CpuWidget {}
+            SepWidget {}
+            MemWidget {}
+            SepWidget {}
+            BatteryWidget {}
+            SepWidget {}
+            TimeWidget {}
         }
     }
 }

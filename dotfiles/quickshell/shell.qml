@@ -1,8 +1,20 @@
 import Quickshell
-import "Bar" as Bar
+import QtQuick
+import "Bar"
 import "Volume"
+import "GamePopup"
 
-Scope {
-    Bar.Bar {}
+ShellRoot {
     VolumeWidget {}
+    Variants {
+        model: Quickshell.screens
+
+        Item {
+            Bar { 
+                modelData: modelData
+                gamepopupHandle: gamePopup
+            }
+            GamePopup { id: gamePopup }
+        }
+    }
 }
