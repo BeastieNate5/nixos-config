@@ -2,12 +2,17 @@
   config,
   pkgs,
   username,
+  inputs,
   ...
 }:
 let
   dotfiles = config.lib.file.mkOutOfStoreSymlink "/home/nate/nixos-config/dotfiles";
 in
 {
+  imports = [
+    inputs.nix-doom-emacs-unstraightened.hmModule
+  ];
+
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
@@ -103,6 +108,11 @@ in
         ph = "push";
       };
     };
+  };
+
+  programs.doom-emacs = {
+    enable = true;
+    doomDir = ./dotfiles/doom;
   };
 
   home.sessionVariables = {

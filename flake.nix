@@ -28,6 +28,11 @@
       url = "github:YaLTeR/niri";
       inputs.rust-overlay.follows = "";
     };
+
+    nix-doom-emacs-unstraightened = {
+      url = "github:marienz/nix-doom-emacs-unstraightened";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
