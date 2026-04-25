@@ -112,6 +112,7 @@ in
 
   programs.doom-emacs = {
     enable = true;
+    emacs = pkgs.emacs-pgtk;
     doomDir = ./dotfiles/doom;
   };
 
