@@ -54,3 +54,6 @@
 ;; (unpin! t)
 ;;
 (package! solaire-mode :disable t)
+(package! ewal)
+(package! ewal-doom-themes)
+(package! elcord)

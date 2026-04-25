@@ -27,6 +27,11 @@
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 14))
 (setq projectile-project-search-path '("~/Projects/"))
 
+(use-package! elcord
+    :config
+    (setq elcord-use-major-mode-as-main-icon t)
+    (elcord-mode +1))
+
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -37,6 +42,16 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
+
+(use-package! ewal
+  :init
+  (setq ewal-use-built-in-always-p nil
+        ewal-use-built-in-on-failure-p t))
+
+(use-package! ewal-doom-themes
+  :config
+  (load-theme 'ewal-doom-one t))
+
 (set-frame-parameter nil 'alpha-background 75)
 (add-to-list 'default-frame-alist '(alpha-background . 75))
 
@@ -85,6 +100,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
-(set-frame-parameter nil 'alpha-background 80) ; For current frame
-(add-to-list 'default-frame-alist '(alpha-background . 80)) ; For all future frames
