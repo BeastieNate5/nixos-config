@@ -28,9 +28,9 @@ in
 
   environment.systemPackages = with pkgs; [
     # Desktop Applications
-    discord
     vesktop
     obsidian
+    easyeffects
     aseprite
     nwg-look
     steam
@@ -50,7 +50,6 @@ in
     # Tools
     vim
     pavucontrol
-    noisetorch
     bluez
     nh
     git
@@ -142,7 +141,6 @@ in
   programs.niri.enable = true;
   programs.xwayland.enable = true;
   programs.gamescope.enable = true;
-  programs.noisetorch.enable = true;
 
   programs.steam.enable = true;
 
