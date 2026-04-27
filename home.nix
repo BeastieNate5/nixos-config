@@ -125,6 +125,30 @@ in
     _JAVA_AWT_WM_NONREPARENTING = 1;
   };
 
+  home.file.".ssh/config".text = ''
+    Host github.com
+      User git
+      IdentityFile ~/.ssh/keys/github_rsa
+
+    Host gitlab.com
+      User git
+      IdentityFile ~/.ssh/keys/gitlab_rsa
+
+    Host acheron
+      User nate
+      IdentityFile ~/.ssh/kets/acheron_id_rsa
+      Port 6060
+
+    Host yorha
+      User nate
+
+    Host oracle
+      User nate
+
+    Host tailless
+      User nate
+  '';
+
   xdg.configFile = {
     "mako/config".source = "${dotfiles}/mako/config";
     "niri/config.kdl".source = "${dotfiles}/niri/config.kdl";
