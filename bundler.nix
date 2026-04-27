@@ -9,5 +9,6 @@
     ./modules/plymouth.nix
     ./modules/displayManager.nix
     ./modules/nixLD.nix
+    ./modules/firewall.nix
   ];
 }
