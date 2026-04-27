@@ -15,6 +15,8 @@
     "flakes"
   ];
 
+  nix.settings.trusted-users = [ "root" "nate" ];
+
   networking.networkmanager.enable = true;
   networking.networkmanager.dns = "systemd-resolved";
 
