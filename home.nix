@@ -135,18 +135,18 @@ in
       IdentityFile ~/.ssh/keys/gitlab_rsa
 
     Host acheron
-      User nate
+      User ${username}
       IdentityFile ~/.ssh/kets/acheron_id_rsa
       Port 6060
 
     Host yorha
-      User nate
+      User ${username}
 
     Host oracle
-      User nate
+      User ${username}
 
     Host tailless
-      User nate
+      User ${username}
   '';
 
   xdg.configFile = {
