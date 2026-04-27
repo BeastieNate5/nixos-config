@@ -8,5 +8,8 @@
 
   services.tailscale.enable = true;
   services.resolved.enable = true;
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    openFirewall = false;
+  };
 }

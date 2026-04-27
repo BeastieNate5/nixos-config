@@ -1,4 +1,7 @@
 {
-  networking.firewall.allowedTCPPorts = [  ];
-  networking.firewall.trustedInterfaces = [ "tailscale0" ];
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [  ];
+    trustedInterfaces = [ "tailscale0" ];
+  };
 }
