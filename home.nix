@@ -136,7 +136,7 @@ in
 
     Host acheron
       User ${username}
-      IdentityFile ~/.ssh/kets/acheron_id_rsa
+      IdentityFile ~/.ssh/keys/acheron_id_rsa
       Port 6060
 
     Host yorha
