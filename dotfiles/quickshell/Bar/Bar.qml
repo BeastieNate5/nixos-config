@@ -81,8 +81,12 @@ PanelWindow {
             CpuWidget {}
             SepWidget {}
             MemWidget {}
-            SepWidget {}
-            BatteryWidget {}
+            SepWidget {
+                visible: bat.hasBattery
+            }
+            BatteryWidget {
+                id: bat
+            }
             SepWidget {}
             TimeWidget {}
         }

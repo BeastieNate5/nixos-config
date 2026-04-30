@@ -14,6 +14,7 @@ ShellRoot {
                 modelData: modelData
                 gamepopupHandle: gamePopup
             }
+
             GamePopup { id: gamePopup }
         }
     }

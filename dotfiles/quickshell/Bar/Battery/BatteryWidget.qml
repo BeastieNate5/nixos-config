@@ -7,6 +7,9 @@ Text {
     id: batteryWidget
     property int batteryLevel: 0
     property bool batteryCharging: false
+    property bool hasBattery: false
+
+    visible: hasBattery
 
     text: {
         const icons = ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
@@ -32,9 +35,21 @@ Text {
             return "#ffffff"
         }
     }
+
+    Process {
+        id: checkBatteryPresence
+        command: ["sh", "-c", "test -d /sys/class/power_supply/BAT0/ || test -d /sys/class/power_supply/BAT1/ && echo 'true' || echo 'false'"]
+        stdout: SplitParser {
+            onRead: data => {
+                batteryWidget.hasBattery = (data.trim() === "true")
+            }
+        }
+        Component.onCompleted: running = true
+    }
+
     Process {
         id: fetchBattery     
-        command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || cat /sys/class/power_supply/BAT1/capacity 2>/dev/null || echo 100"]
+        command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || cat /sys/class/power_supply/BAT1/capacity 2>/dev/null"]
         stdout: SplitParser {
             onRead: data => {
                 if (!data) return
@@ -47,7 +62,7 @@ Text {
 
     Process {
         id: batteryStatus
-        command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/status 2>/dev/null || cat /sys/class/power_supply/BAT1/status 2>/dev/null || echo Full"]
+        command: ["sh", "-c", "cat /sys/class/power_supply/BAT0/status 2>/dev/null || cat /sys/class/power_supply/BAT1/status 2>/dev/null"]
         stdout: SplitParser {
             onRead: data => {
                 if (!data) return
