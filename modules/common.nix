@@ -16,6 +16,7 @@
   ];
 
   nix.settings.trusted-users = [ "root" "nate" ];
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   networking.networkmanager.enable = true;
   networking.networkmanager.dns = "systemd-resolved";

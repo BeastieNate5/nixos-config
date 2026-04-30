@@ -32,6 +32,21 @@
     (setq elcord-use-major-mode-as-main-icon t)
     (elcord-mode +1))
 
+
+(after! nix-mode
+  (setq lsp-nix-nixd-server-path "nixd"
+        lsp-nix-nixd-formatting-command [ "nixfmt" ]
+        lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
+        lsp-nix-nixd-nixos-options-expr "(builtins.getFlake \"/home/nate/nixos-config\").nixosConfigurations.yorha.options")
+        ;;lsp-nix-nixd-home-manager-options-expr "(builtins.getFlake \"/home/nate/nixos-config\").homeConfigurations.nate.options")
+
+  ;; This ensures nixd is preferred over nil or rnix
+  (setq lsp-disabled-clients '(nix-nil rnix-lsp))
+
+  (set-company-backend! 'nix-mode '(:separate company-capf company-yasnippet)))
+
+(setq-hook! 'nix-mode-hook company-idle-delay 0.1)
+
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
