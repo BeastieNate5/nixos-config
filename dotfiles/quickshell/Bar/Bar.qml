@@ -37,12 +37,15 @@ PanelWindow {
         width: parent.width - 100
         color: Style.bgcolor
         radius: 12
-        
+        topLeftRadius: 0
+        topRightRadius: 0
+
         RowLayout {
             anchors.left: parent.left
             anchors.leftMargin: 17
             anchors.verticalCenter: parent.verticalCenter
 
+            /*
             Item {
                 implicitWidth: 20
                 implicitHeight: 20
@@ -61,11 +64,13 @@ PanelWindow {
                     }
                 }
             }
+            */
+            WorkspacesWidget {}
         }
 
         RowLayout {
             anchors.centerIn: parent
-            WorkspacesWidget {}
+            TimeWidget {}
         }
 
         RowLayout {
@@ -87,8 +92,6 @@ PanelWindow {
             BatteryWidget {
                 id: bat
             }
-            SepWidget {}
-            TimeWidget {}
         }
     }
 }
