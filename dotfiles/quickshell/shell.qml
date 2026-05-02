@@ -9,13 +9,11 @@ ShellRoot {
     Variants {
         model: Quickshell.screens
 
-        Item {
-            Bar { 
+        Component {
+            Bar {
                 modelData: modelData
                 gamepopupHandle: gamePopup
             }
-
-            GamePopup { id: gamePopup }
         }
     }
 }
