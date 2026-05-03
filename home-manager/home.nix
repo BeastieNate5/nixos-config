@@ -11,6 +11,7 @@ in
 {
   imports = [
     inputs.nix-doom-emacs-unstraightened.hmModule
+    ./modules/easyeffects
   ];
 
   home.username = username;
@@ -113,7 +114,7 @@ in
   programs.doom-emacs = {
     enable = true;
     emacs = pkgs.emacs-pgtk;
-    doomDir = ./dotfiles/doom;
+    doomDir = ../dotfiles/doom;
   };
 
   home.sessionVariables = {

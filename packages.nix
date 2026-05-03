@@ -30,7 +30,6 @@ in
     # Desktop Applications
     vesktop
     obsidian
-    easyeffects
     aseprite
     nwg-look
     steam
