@@ -7,8 +7,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/common.nix
-    ../../modules/remoteBuilder.nix
+    ../../common.nix
+    ../../remoteBuilder.nix
   ];
 
   services.remoteBuilder = {

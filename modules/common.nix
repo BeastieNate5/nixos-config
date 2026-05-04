@@ -5,8 +5,8 @@
 { inputs, username, ... }:
 {
   imports = [
-    ../packages.nix
-    ../bundler.nix
+    ./packages.nix
+    ./bundler.nix
     inputs.home-manager.nixosModules.default
   ];
 

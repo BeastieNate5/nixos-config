@@ -8,17 +8,17 @@ let
   custom-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "hyprland_kath";
   };
-  qylockTheme = pkgs.callPackage ./qylock-sddm.nix {
+  qylockTheme = pkgs.callPackage ../qylock-sddm.nix {
     theme = qylock-theme;
-    nierFont = ./fonts/FOT-Rodin-Pro-DB.otf;
-    terrariaFont = ./fonts/Andy-Bold.ttf;
-    genshinFont = ./fonts/zhcn.ttf;
-    swordFont = ./fonts/The-Last-Shuriken.ttf;
-    minecraftFont = ./fonts/Minecraft.ttf;
-    hsrFont = ./fonts/DIN-Next.ttf;
-    osuFont = ./fonts/Torus-Regular.otf;
+    nierFont = ../fonts/FOT-Rodin-Pro-DB.otf;
+    terrariaFont = ../fonts/Andy-Bold.ttf;
+    genshinFont = ../fonts/zhcn.ttf;
+    swordFont = ../fonts/The-Last-Shuriken.ttf;
+    minecraftFont = ../fonts/Minecraft.ttf;
+    hsrFont = ../fonts/DIN-Next.ttf;
+    osuFont = ../fonts/Torus-Regular.otf;
   };
-  qylock-lock = pkgs.callPackage ./qylock-lock.nix {
+  qylock-lock = pkgs.callPackage ../qylock-lock.nix {
     qylock-sddm = qylockTheme;
     qylock-theme = qylock-theme;
   };
@@ -81,7 +81,7 @@ in
     samba
     wl-mirror
     inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
-    (import ./fhs.nix { inherit pkgs; })
+    (import ../fhs.nix { inherit pkgs; })
 
     # WM stuff
     niri

@@ -2,15 +2,16 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ ... }:
+{
+  ...
+}:
 
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/common.nix
-    ../../modules/distributed-builds.nix
+    ../../common.nix
+    ../../distributed-builds.nix
   ];
-
-  networking.hostName = "oracle";
-
+  powerManagement.cpuFreqGovernor = "performance";
+  networking.hostName = "tailless";
 }

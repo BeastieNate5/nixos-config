@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
+    import-tree.url = "github:vic/import-tree";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     home-manager = {
@@ -45,7 +45,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
 
-      imports = [ ./flake/nixos.nix ];
+      imports = [ ./modules/nixos.nix ];
 
       perSystem = { pkgs, ... }: {
         formatter = pkgs.nixfmt-rfc-style;
