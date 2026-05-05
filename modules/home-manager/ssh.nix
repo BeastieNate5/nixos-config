@@ -22,7 +22,7 @@
         User ${config.settings.username}
 
       Host tailless
-        User ${username}
+        User ${config.settings.username}
     '';
   };
 }
