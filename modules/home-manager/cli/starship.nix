@@ -1,0 +1,6 @@
+{
+  flake.homeModules.starship =
+  {
+
+  };
+}

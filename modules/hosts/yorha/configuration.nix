@@ -3,28 +3,34 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { ... }:
-
 {
-  imports = [
-    ./hardware-configuration.nix
-    ../../common.nix
-    ../../remoteBuilder.nix
-  ];
+  flake.nixosModules.yorha-configuration = { self, ... }:
+    {
+      imports = with self.nixosModules; [
+        shared
+        remote-builder
+      ];
 
-  services.remoteBuilder = {
-    enable = true;
-    sshIP = "0.0.0.0";
-  };
+      services.remoteBuilder = {
+        enable = true;
+        sshIP = "0.0.0.0";
+      };
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
+      settings = {
+        qylock-theme = "nier-automata";
+      };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
-  hardware.nvidia.modesetting.enable = true;
+      hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+      };
 
-  networking.hostName = "yorha";
+      services.xserver.videoDrivers = [ "nvidia" ];
+      hardware.nvidia.open = true;
+      hardware.nvidia.modesetting.enable = true;
 
+      networking.hostName = "yorha";
+
+      system.stateVersion = "25.05";
+    };
 }

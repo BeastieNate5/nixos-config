@@ -1,6 +1,9 @@
-pkgs: {
-  futaba =
-    pkgs.stdenv.mkDerivation {
+{
+  perSystem = { pkgs, ... }:
+  {
+    packages = {
+    futaba =
+      pkgs.stdenv.mkDerivation {
       pname = "Futaba Grub Theme";
       version = "0.0.1";
       src = fetchTarball {
@@ -12,11 +15,10 @@ pkgs: {
         mkdir -p $out/theme
         cp -r ./* $out/theme/
       '';
-    }
-    + "/theme";
+      };
 
-  yorha =
-    pkgs.stdenv.mkDerivation {
+    yorha =
+      pkgs.stdenv.mkDerivation {
       pname = "YoRHa Grub Theme";
       version = "0.0.1";
       src = fetchGit {
@@ -28,11 +30,10 @@ pkgs: {
         mkdir -p $out/theme
         cp -r ./yorha-1920x1080/* $out/theme/
       '';
-    }
-    + "/theme";
+      };
 
-  lain =
-    pkgs.stdenv.mkDerivation rec {
+    lain =
+      pkgs.stdenv.mkDerivation rec {
       pname = "Lain Grub Theme";
       version = "1.0.1";
       src = fetchTarball {
@@ -44,6 +45,7 @@ pkgs: {
         mkdir -p $out/theme
         cp -r ./lain/* $out/theme/
       '';
-    }
-    + "/theme";
+      };
+    };
+  };
 }

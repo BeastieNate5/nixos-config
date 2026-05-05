@@ -1,17 +1,18 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 {
-  ...
-}:
+  flake.nixosModules.tailless-configuration = { self, ... }:
+  {
+    imports = with self.nixosModules; [
+      shared
+      distributedBuilds
+    ];
 
-{
-  imports = [
-    ./hardware-configuration.nix
-    ../../common.nix
-    ../../distributed-builds.nix
-  ];
-  powerManagement.cpuFreqGovernor = "performance";
-  networking.hostName = "tailless";
+    settings = {
+      qylock-theme = "wuwa";
+    };
+
+    powerManagement.cpuFreqGovernor = "performance";
+    networking.hostName = "tailless";
+
+    system.stateVersion = "25.05";
+  };
 }
