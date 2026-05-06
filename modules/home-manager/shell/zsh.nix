@@ -1,14 +1,15 @@
 { ... }:
 {
-  flake.homeModules.zsh = { ... }:
-  {
-    config = {
+  flake.homeModules.zsh =
+    { ... }:
+    {
+      config = {
         programs.zsh = {
-        enable = true;
-        autosuggestion.enable = true;
-        syntaxHighlighting.enable = true;
+          enable = true;
+          autosuggestion.enable = true;
+          syntaxHighlighting.enable = true;
 
-        shellAliases = {
+          shellAliases = {
             c = "clear";
             n = "nvim";
             ls = "eza --icons";
@@ -18,15 +19,15 @@
             ff = "fastfetch";
             ssh = "kitty +kitten ssh";
             barreload = "pkill waybar; niri msg action spawn -- 'waybar'";
-        };
-        oh-my-zsh = {
+          };
+          oh-my-zsh = {
             enable = true;
             plugins = [
-            "git"
-            "colored-man-pages"
+              "git"
+              "colored-man-pages"
             ];
+          };
         };
       };
     };
-  };
 }

@@ -1,11 +1,17 @@
 {
   # This module will be changejd
-  flake.nixosModules.packages = { config, pkgs, inputs, ... }:
-  let
-    custom-astronaut = pkgs.sddm-astronaut.override {
+  flake.nixosModules.packages =
+    {
+      config,
+      pkgs,
+      inputs,
+      ...
+    }:
+    let
+      custom-astronaut = pkgs.sddm-astronaut.override {
         embeddedTheme = "hyprland_kath";
-    };
-    qylockTheme = pkgs.callPackage ../qylock-sddm.nix {
+      };
+      qylockTheme = pkgs.callPackage ../qylock-sddm.nix {
         theme = config.settings.qylock-theme;
         nierFont = ../fonts/FOT-Rodin-Pro-DB.otf;
         terrariaFont = ../fonts/Andy-Bold.ttf;
@@ -14,17 +20,17 @@
         minecraftFont = ../fonts/Minecraft.ttf;
         hsrFont = ../fonts/DIN-Next.ttf;
         osuFont = ../fonts/Torus-Regular.otf;
-    };
-    qylock-lock = pkgs.callPackage ../qylock-lock.nix {
+      };
+      qylock-lock = pkgs.callPackage ../qylock-lock.nix {
         qylock-sddm = qylockTheme;
         qylock-theme = config.settings.qylock-theme;
-    };
-  in
-  {
-    nixpkgs.config.allowUnfree = true;
-    nixpkgs.overlays = [ inputs.niri-src.overlays.default ];
+      };
+    in
+    {
+      nixpkgs.config.allowUnfree = true;
+      nixpkgs.overlays = [ inputs.niri-src.overlays.default ];
 
-    environment.systemPackages = with pkgs; [
+      environment.systemPackages = with pkgs; [
         # Desktop Applications
         vesktop
         obsidian
@@ -66,10 +72,10 @@
         ffmpeg
         file
         (pywal16.override {
-        withColorz = true;
-        withModernColorthief = true;
-        withFastColorthief = true;
-        withHaishoku = true;
+          withColorz = true;
+          withModernColorthief = true;
+          withFastColorthief = true;
+          withHaishoku = true;
         })
         btop
         mpv
@@ -99,10 +105,10 @@
         #nodejs
         #go
         (python3.withPackages (
-        p: with p; [
+          p: with p; [
             requests
             pwntools
-        ]
+          ]
         ))
 
         #rustc
@@ -131,16 +137,16 @@
         custom-astronaut
         kdePackages.qtmultimedia
         qylockTheme
-    ];
+      ];
 
-    programs.firefox.enable = true;
-    programs.zsh.enable = true;
-    programs.niri.enable = true;
-    programs.xwayland.enable = true;
-    programs.gamescope.enable = true;
+      programs.firefox.enable = true;
+      programs.zsh.enable = true;
+      programs.niri.enable = true;
+      programs.xwayland.enable = true;
+      programs.gamescope.enable = true;
 
-    programs.steam.enable = true;
+      programs.steam.enable = true;
 
-    virtualisation.docker.enable = true;
-  };
+      virtualisation.docker.enable = true;
+    };
 }

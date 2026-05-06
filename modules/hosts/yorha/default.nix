@@ -1,7 +1,6 @@
 { self, inputs, ... }:
 {
-  flake.nixosConfigurations.yorha = inputs.nixpkgs.lib.nixosSystem
-  {
+  flake.nixosConfigurations.yorha = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = {
       inherit inputs;
     };

@@ -1,10 +1,9 @@
 {
-  flake.nixosModules.firewall =
-  {
+  flake.nixosModules.firewall = {
     config = {
       networking.firewall = {
         enable = true;
-        allowedTCPPorts = [];
+        allowedTCPPorts = [ ];
         trustedInterfaces = [ "tailscale0" ];
       };
     };

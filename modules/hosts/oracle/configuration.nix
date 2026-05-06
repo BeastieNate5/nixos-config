@@ -1,7 +1,6 @@
 { self, ... }:
 {
-  flake.nixosModules.oracle-configuration =
-  {
+  flake.nixosModules.oracle-configuration = {
     imports = with self.nixosModules; [
       shared
       distributedBuilds

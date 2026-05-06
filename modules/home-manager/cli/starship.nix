@@ -1,6 +1,5 @@
 {
-  flake.homeModules.starship =
-  {
+  flake.homeModules.starship = {
     config = {
       programs.starship.enable = true;
     };

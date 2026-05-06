@@ -1,6 +1,5 @@
 {
-  flake.nixosModules.network-manager =
-  {
+  flake.nixosModules.network-manager = {
     config = {
       networking.networkmanager = {
         enable = true;

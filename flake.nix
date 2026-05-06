@@ -42,6 +42,5 @@
       flake-parts,
       ...
     }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; }
-      ( inputs.import-tree ./modules );
+    flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

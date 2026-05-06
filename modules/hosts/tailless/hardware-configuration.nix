@@ -2,50 +2,56 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
-  flake.nixosModules.tailless-hardware = { config, lib, modulesPath, ... }:
-  {
-    imports = [
+  flake.nixosModules.tailless-hardware =
+    {
+      config,
+      lib,
+      modulesPath,
+      ...
+    }:
+    {
+      imports = [
         (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+      ];
 
-    boot.initrd.availableKernelModules = [
+      boot.initrd.availableKernelModules = [
         "xhci_pci"
         "thunderbolt"
         "nvme"
         "usb_storage"
         "sd_mod"
         "rtsx_pci_sdmmc"
-    ];
-    boot.initrd.kernelModules = [ ];
-    boot.kernelModules = [ "kvm-intel" ];
-    boot.extraModulePackages = [ ];
+      ];
+      boot.initrd.kernelModules = [ ];
+      boot.kernelModules = [ "kvm-intel" ];
+      boot.extraModulePackages = [ ];
 
-    fileSystems."/" = {
+      fileSystems."/" = {
         device = "/dev/disk/by-uuid/db6273a6-8b0d-4fa7-8c0b-39d556652a35";
         fsType = "ext4";
-    };
+      };
 
-    fileSystems."/boot" = {
+      fileSystems."/boot" = {
         device = "/dev/disk/by-uuid/4E85-4A57";
         fsType = "vfat";
         options = [
-        "fmask=0077"
-        "dmask=0077"
+          "fmask=0077"
+          "dmask=0077"
         ];
-    };
+      };
 
-    swapDevices = [
+      swapDevices = [
         { device = "/dev/disk/by-uuid/2dc7cbf3-9916-41c2-93f6-833c5eae4fe9"; }
-    ];
+      ];
 
-    # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-    # (the default) this is the recommended approach. When using systemd-networkd it's
-    # still possible to use this option, but it's recommended to use it in conjunction
-    # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-    networking.useDHCP = lib.mkDefault true;
-    # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
+      # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+      # (the default) this is the recommended approach. When using systemd-networkd it's
+      # still possible to use this option, but it's recommended to use it in conjunction
+      # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+      networking.useDHCP = lib.mkDefault true;
+      # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
-    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  };
+      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    };
 }

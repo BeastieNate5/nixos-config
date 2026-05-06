@@ -1,7 +1,6 @@
 { self, inputs, ... }:
 {
-  flake.nixosConfigurations.tailless = inputs.nixpkgs.lib.nixosSystem
-  {
+  flake.nixosConfigurations.tailless = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = {
       inherit inputs;
     };

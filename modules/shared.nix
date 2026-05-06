@@ -1,7 +1,6 @@
 { self, ... }:
 {
-  flake.nixosModules.shared =
-  {
+  flake.nixosModules.shared = {
     imports = with self.nixosModules; [
       bluetooth
       firewall
