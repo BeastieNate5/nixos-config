@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    import-tree.url = "github:vic/import-tree";
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -37,36 +39,8 @@
 
   outputs =
     {
-      nixpkgs,
-      niri-src,
+      flake-parts,
       ...
     }@inputs:
-    let
-      system = "x86_64-linux";
-      mkHost =
-        hostname:
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit inputs;
-          }
-          // (import ./hosts/default-settings.nix // import ./hosts/${hostname}/settings.nix);
-          modules = [
-            ./hosts/${hostname}/configuration.nix
-            {
-              nixpkgs.overlays = [ niri-src.overlays.default ];
-            }
-          ];
-        };
-    in
-    {
-      formatter."${system}" = nixpkgs.legacyPackages."${system}".nixfmt-tree;
-
-      nixosConfigurations = {
-        tailless = mkHost "tailless";
-        oracle = mkHost "oracle";
-        yorha = mkHost "yorha";
-      };
-
-    };
+    flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

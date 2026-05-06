@@ -1,3 +1,0 @@
-{
-  qylock-theme = "enfield";
-}
