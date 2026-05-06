@@ -1,12 +1,11 @@
-{ pkgs, qylock-theme, ... }:
 {
-  flake.nixosModules.sddm =
+  flake.nixosModules.sddm = { config, pkgs, ... }:
   {
     services.displayManager.sddm = {
         enable = true;
         wayland.enable = true;
 
-        theme = qylock-theme;
+        theme = config.settings.qylock-theme;
         extraPackages = [
         pkgs.quickshell
         pkgs.qt6.qtdeclarative

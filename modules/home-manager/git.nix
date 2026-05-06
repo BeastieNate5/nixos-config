@@ -1,7 +1,9 @@
 {
   flake.homeModules.git-config =
   {
-    programs.git = {
+
+    config = {
+      programs.git = {
       enable = true;
 
       settings = {
@@ -16,6 +18,7 @@
           cm = "commit -m";
           pl = "pull";
           ph = "push";
+          };
         };
       };
     };

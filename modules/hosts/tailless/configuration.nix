@@ -1,5 +1,6 @@
+{ self, ... }:
 {
-  flake.nixosModules.tailless-configuration = { self, ... }:
+  flake.nixosModules.tailless-configuration =
   {
     imports = with self.nixosModules; [
       shared

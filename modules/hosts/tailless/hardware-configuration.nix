@@ -2,15 +2,7 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
-}:
-
-{
-  flake.nixosModules.tailless-hardware =
+  flake.nixosModules.tailless-hardware = { config, lib, modulesPath, ... }:
   {
     imports = [
         (modulesPath + "/installer/scan/not-detected.nix")

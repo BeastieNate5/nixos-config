@@ -1,12 +1,14 @@
 {
   flake.homeModules.kitty =
   {
-    programs.kitty = {
-      enable = true;
-      shellIntegration.enableZshIntegration = true;
-      extraConfig = ''
-        include theme.conf
-      '';
+    config = {
+      programs.kitty = {
+        enable = true;
+        shellIntegration.enableZshIntegration = true;
+        extraConfig = ''
+           include theme.conf
+        '';
+      };
     };
   };
 }

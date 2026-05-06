@@ -1,5 +1,6 @@
+{ self, ... }:
 {
-  flake.nixosModules.shared = { self }:
+  flake.nixosModules.shared =
   {
     imports = with self.nixosModules; [
       bluetooth
@@ -16,6 +17,7 @@
       resolved
       sddm
       users
+      tailscale
     ];
 
     config = {

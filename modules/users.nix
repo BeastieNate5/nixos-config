@@ -1,8 +1,8 @@
 {
-  flake.nixosModules.users = {pkgs, username, ...}:
+  flake.nixosModules.users = { config, pkgs, username, ... }:
   {
     config = {
-      users.users.${username} = {
+      users.users.${config.settings.username} = {
         isNormalUser = true;
         shell = pkgs.zsh;
         extraGroups = [

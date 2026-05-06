@@ -1,12 +1,12 @@
 {
   # This module will be changejd
-  flake.nixosModules.packages = { pkgs, qylock-theme, inputs }:
+  flake.nixosModules.packages = { config, pkgs, inputs, ... }:
   let
     custom-astronaut = pkgs.sddm-astronaut.override {
         embeddedTheme = "hyprland_kath";
     };
     qylockTheme = pkgs.callPackage ../qylock-sddm.nix {
-        theme = qylock-theme;
+        theme = config.settings.qylock-theme;
         nierFont = ../fonts/FOT-Rodin-Pro-DB.otf;
         terrariaFont = ../fonts/Andy-Bold.ttf;
         genshinFont = ../fonts/zhcn.ttf;
@@ -17,11 +17,12 @@
     };
     qylock-lock = pkgs.callPackage ../qylock-lock.nix {
         qylock-sddm = qylockTheme;
-        qylock-theme = qylock-theme;
+        qylock-theme = config.settings.qylock-theme;
     };
   in
   {
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.overlays = [ inputs.niri-src.overlays.default ];
 
     environment.systemPackages = with pkgs; [
         # Desktop Applications

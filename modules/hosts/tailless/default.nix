@@ -9,7 +9,8 @@
     modules = with self.nixosModules; [
       tailless-configuration
       tailless-hardware
-      home-manager
+      inputs.home-manager.nixosModules.home-manager
+      home-manager-config
       settings
     ];
   };

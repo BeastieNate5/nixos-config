@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.settings = { lib }:
+  flake.nixosModules.settings = { lib, ... }:
   {
     options.settings = {
       username = lib.mkOption {

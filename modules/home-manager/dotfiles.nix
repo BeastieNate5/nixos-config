@@ -1,14 +1,16 @@
 {
-  flake.homeModules.dotfiles = { lib }:
+  flake.homeModules.dotfiles = { config, ... }:
   let
-    dotfiles = lib.file.mkOutOfStoreSymlink "/home/nate/nixos-config/dotfiles";
+    dotfiles = config.lib.file.mkOutOfStoreSymlink "/home/nate/nixos-config/dotfiles";
   in
   {
-    xdg.configFile = {
-      "mako/config".source = "${dotfiles}/mako/config";
-      "niri/config.kdl".source = "${dotfiles}/niri/config.kdl";
-      nvim.source = "${dotfiles}/nvim";
-      quickshell.source = "${dotfiles}/quickshell";
+    config = {
+      xdg.configFile = {
+        "mako/config".source = "${dotfiles}/mako/config";
+        "niri/config.kdl".source = "${dotfiles}/niri/config.kdl";
+        nvim.source = "${dotfiles}/nvim";
+        quickshell.source = "${dotfiles}/quickshell";
+      };
     };
   };
 }

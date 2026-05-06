@@ -1,6 +1,7 @@
 {
   flake.homeModules.tmux = { pkgs, ... }:
   {
+    config = {
     programs.tmux = {
       enable = true;
       plugins = with pkgs.tmuxPlugins; [
@@ -38,6 +39,7 @@
 
         bind r source-file ~/.config/tmux/tmux.conf
       '';
+    };
     };
   };
 }

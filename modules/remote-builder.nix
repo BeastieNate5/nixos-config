@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.remote-builder = { config, lib }:
+  flake.nixosModules.remote-builder = { config, lib, ... }:
   let
     cfg = config.services.remoteBuilder;
   in

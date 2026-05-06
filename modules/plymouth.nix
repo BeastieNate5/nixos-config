@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.plymouth = { pkgs }:
+  flake.nixosModules.plymouth = { pkgs, ... }:
   {
     boot.plymouth = {
         enable = true;

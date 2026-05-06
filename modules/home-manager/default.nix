@@ -1,26 +1,30 @@
+{ self, ... }:
 {
-  flake.nixosModules.home-manager = { self, config, ... }:
+  flake.nixosModules.home-manager-config = { config, ... }:
   {
     home-manager = {
-      programs.home-manager.enable = true;
-      stateVersion = "25.05";
+      useGlobalPkgs = true;
+      useUserPackages = true;
 
       users.${config.settings.username} = {
-        username = config.settings.username;
-        homeDirectory = "/home/${config.settings.username }";
+        home = {
+          username = config.settings.username;
+          homeDirectory = "/home/${config.settings.username}";
+          stateVersion = "25.05";
+        };
 
         imports = with self.homeModules; [
           kitty
-          easyeffects
-          direnv
-          starship
           tmux
-          git-config
-          doom-emacs
-          zsh
           env
-          dotfiles
+          zsh
+          easyeffects
+          doom-emacs
+          git-config
           ssh-config
+          starship
+          direnv
+          dotfiles
         ];
       };
     };

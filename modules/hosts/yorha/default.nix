@@ -9,7 +9,8 @@
     modules = with self.nixosModules; [
       yorha-configuration
       yorha-hardware
-      home-manager
+      inputs.home-manager.nixosModules.home-manager
+      home-manager-config
       settings
     ];
   };

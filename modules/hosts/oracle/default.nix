@@ -9,7 +9,8 @@
     modules = with self.nixosModules; [
       oracle-configuration
       oracle-hardware
-      home-manager
+      inputs.home-manager.nixosModules.home-manager
+      home-manager-config
       settings
     ];
   };
