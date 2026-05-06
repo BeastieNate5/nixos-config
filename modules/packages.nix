@@ -57,8 +57,6 @@
         nh
         git
         zsh
-        starship
-        btop
         wget
         wl-clipboard
         neovim
