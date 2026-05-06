@@ -26,6 +26,7 @@
             starship
             direnv
             dotfiles
+            btop
           ];
         };
       };
