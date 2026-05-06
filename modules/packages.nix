@@ -135,6 +135,7 @@
         custom-astronaut
         kdePackages.qtmultimedia
         qylockTheme
+        inputs.hatsune-miku-cursors.packages."${pkgs.stdenv.hostPlatform.system}".default
       ];
 
       programs.firefox.enable = true;

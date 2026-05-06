@@ -35,6 +35,11 @@
       url = "github:marienz/nix-doom-emacs-unstraightened";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hatsune-miku-cursors = {
+      url = "github:BeastieNate5/hatsune-miku-cursors-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
