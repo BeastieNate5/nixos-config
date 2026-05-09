@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   # This module will be changejd
   flake.nixosModules.packages =
@@ -68,7 +69,7 @@
         samba
         wl-mirror
         inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
-        (import ../fhs.nix { inherit pkgs; })
+        self.packages."${pkgs.stdenv.hostPlatform.system}".fhs
 
         # WM stuff
         niri
