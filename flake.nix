@@ -17,7 +17,7 @@
     };
 
     snapsr = {
-      url = "github:BeastieNate5/snapsr";
+      url = "github:0x2B-bin/snapsr";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -37,7 +37,12 @@
     };
 
     hatsune-miku-cursors = {
-      url = "github:BeastieNate5/hatsune-miku-cursors-flake";
+      url = "github:0x2B-bin/hatsune-miku-cursors-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    qylock = {
+      url = "github:0x2B-bin/qylock-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

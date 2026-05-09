@@ -2,7 +2,6 @@
   # This module will be changejd
   flake.nixosModules.packages =
     {
-      config,
       pkgs,
       inputs,
       ...
@@ -10,20 +9,6 @@
     let
       custom-astronaut = pkgs.sddm-astronaut.override {
         embeddedTheme = "hyprland_kath";
-      };
-      qylockTheme = pkgs.callPackage ../qylock-sddm.nix {
-        theme = config.settings.qylock-theme;
-        nierFont = ../fonts/FOT-Rodin-Pro-DB.otf;
-        terrariaFont = ../fonts/Andy-Bold.ttf;
-        genshinFont = ../fonts/zhcn.ttf;
-        swordFont = ../fonts/The-Last-Shuriken.ttf;
-        minecraftFont = ../fonts/Minecraft.ttf;
-        hsrFont = ../fonts/DIN-Next.ttf;
-        osuFont = ../fonts/Torus-Regular.otf;
-      };
-      qylock-lock = pkgs.callPackage ../qylock-lock.nix {
-        qylock-sddm = qylockTheme;
-        qylock-theme = config.settings.qylock-theme;
       };
     in
     {
@@ -96,7 +81,6 @@
         wofi
         waybar
         quickshell
-        qylock-lock
 
         # Dev
         gcc
@@ -134,7 +118,6 @@
         # Other
         custom-astronaut
         kdePackages.qtmultimedia
-        qylockTheme
         inputs.hatsune-miku-cursors.packages."${pkgs.stdenv.hostPlatform.system}".default
       ];
 

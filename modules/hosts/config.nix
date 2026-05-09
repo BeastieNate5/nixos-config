@@ -1,6 +1,9 @@
 {
   flake.nixosModules.settings =
-    { lib, ... }:
+    { config, lib, ... }:
+    let
+      cfg = config.settings;
+    in
     {
       options.settings = {
         username = lib.mkOption {
@@ -11,6 +14,21 @@
         qylock-theme = lib.mkOption {
           type = lib.types.str;
           default = "nier-automata";
+        };
+
+        qylock-sddm-font = lib.mkOption {
+          type = lib.types.nullOr lib.types.path;
+          default = null;
+        };
+
+        qylock-lock-theme = lib.mkOption {
+          type = lib.types.str;
+          default = cfg.qylock-theme;
+        };
+
+        qylock-lock-font = lib.mkOption {
+          type = lib.types.nullOr lib.types.path;
+          default = null;
         };
 
         grub-theme = lib.mkOption {
