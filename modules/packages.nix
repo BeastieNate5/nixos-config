@@ -47,12 +47,12 @@
         wl-clipboard
         neovim
         kitty
-        ly
         brightnessctl
         fastfetch
         eza
         bat
         awww
+        ranger
         ffmpeg
         file
         (pywal16.override {
