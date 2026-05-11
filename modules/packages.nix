@@ -52,7 +52,6 @@
         eza
         bat
         awww
-        ranger
         ffmpeg
         file
         (pywal16.override {

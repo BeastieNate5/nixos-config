@@ -27,6 +27,7 @@
             direnv
             dotfiles
             btop
+            ranger
           ];
         };
       };
