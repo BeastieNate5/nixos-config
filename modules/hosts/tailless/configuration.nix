@@ -4,6 +4,7 @@
     imports = with self.nixosModules; [
       shared
       distributedBuilds
+      jellyfin
     ];
 
     settings = {
