@@ -2,7 +2,7 @@
 {
   flake.nixosModules.oracle-configuration = {
     imports = with self.nixosModules; [
-      shared
+      desktop-profile
       distributedBuilds
     ];
 

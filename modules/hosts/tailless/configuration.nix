@@ -2,7 +2,7 @@
 {
   flake.nixosModules.tailless-configuration = {
     imports = with self.nixosModules; [
-      shared
+      desktop-profile
       distributedBuilds
       jellyfin
     ];

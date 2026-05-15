@@ -1,6 +1,6 @@
 {
   flake.nixosModules.sddm =
-    { config, inputs, ... }:
+    { pkgs, config, inputs, ... }:
     {
       imports = [ inputs.qylock.nixosModules.qylock ];
 
@@ -11,5 +11,9 @@
         lock-theme = config.settings.qylock-lock-theme;
         lock-font = config.settings.qylock-sddm-font;
       };
+
+      environment.systemPackages = [
+        pkgs.kdePackages.qtmultimedia
+      ];
     };
 }

@@ -6,7 +6,7 @@
 {
   flake.nixosModules.yorha-configuration = {
     imports = with self.nixosModules; [
-      shared
+      desktop-profile
       remote-builder
     ];
 
