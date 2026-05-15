@@ -47,7 +47,6 @@
 
       programs = {
         firefox.enable = true;
-        zsh.enable = true;
         niri.enable = true;
         xwayland.enable = true;
         gamescope.enable = true;

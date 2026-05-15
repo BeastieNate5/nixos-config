@@ -7,5 +7,7 @@
     ];
 
     networking.hostName = "nazuna";
+
+    system.stateVersion = "25.11";
   };
 }
