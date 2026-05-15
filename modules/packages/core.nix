@@ -21,8 +21,8 @@
         unzip
         tailscale
         samba
-        inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
-        self.packages."${pkgs.stdenv.hostPlatform.system}".fhs
+        #inputs.snapsr.packages."${pkgs.stdenv.hostPlatform.system}".default
+        #self.packages."${pkgs.stdenv.hostPlatform.system}".fhs
         gcc
         (python3.withPackages (
           p: with p; [
