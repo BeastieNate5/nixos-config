@@ -6,7 +6,7 @@
       inherit inputs;
     };
 
-    modules = with self.nixModules; [
+    modules = with self.nixosModules; [
       nazuna-configuration
       nazuna-hardware
       settings
