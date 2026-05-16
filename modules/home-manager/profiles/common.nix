@@ -4,6 +4,7 @@
     imports = with self.homeModules; [
       env
       zsh
+      nushell
       starship
       tmux
       git-config
