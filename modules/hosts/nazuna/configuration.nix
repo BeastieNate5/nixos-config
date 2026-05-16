@@ -6,7 +6,7 @@
       server-profile
     ];
 
-    boot.kernalPackages = pkgs.linuxPackages;
+    boot.kernelPackages = pkgs.linuxPackages;
     networking.hostName = "nazuna";
     system.stateVersion = "25.11";
   };
