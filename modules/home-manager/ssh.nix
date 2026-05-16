@@ -25,6 +25,9 @@
 
           Host tailless
             User ${osConfig.settings.username}
+
+          Host nazuna
+            User ${osConfig.settings.username}
         '';
       };
     };
