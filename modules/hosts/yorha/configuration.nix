@@ -25,6 +25,8 @@
       enable32Bit = true;
     };
 
+    boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia.open = true;
     hardware.nvidia.modesetting.enable = true;
