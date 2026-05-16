@@ -9,7 +9,7 @@
       yorha-configuration
       yorha-hardware
       inputs.home-manager.nixosModules.home-manager
-      home-manager-config
+      hm-desktop-config
       settings
     ];
   };

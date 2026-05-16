@@ -11,6 +11,8 @@
     modules = with self.nixosModules; [
       nazuna-configuration
       nazuna-hardware
+      inputs.home-manager.nixosModules.home-manager
+      hm-server-config
       settings
     ];
   };
