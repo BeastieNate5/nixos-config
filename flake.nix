@@ -42,6 +42,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    anicursors = {
+      url = "github:0x2B-bin/AniCursors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     qylock = {
       url = "github:0x2B-bin/qylock-flake";
       inputs.nixpkgs.follows = "nixpkgs";
