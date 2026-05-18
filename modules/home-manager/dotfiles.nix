@@ -12,6 +12,12 @@
           nvim.source = "${dotfiles}/nvim";
           quickshell.source = "${dotfiles}/quickshell";
         };
+
+        home.activation.createNiriConfigs = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+          mkdir -p "$HOME/.config/niri"
+          touch $HOME/.config/niri/style.kdl
+          touch $HOME/.config/niri/override.kdl
+        '';
       };
     };
 }

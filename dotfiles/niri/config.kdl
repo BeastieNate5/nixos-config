@@ -284,7 +284,6 @@ layout {
     }
 }
 
-include "colors.kdl"
 
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
@@ -688,3 +687,6 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
+
+include "style.kdl"
+include "override.kdl"
