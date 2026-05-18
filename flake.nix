@@ -22,6 +22,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    henshin = {
+      url = "github:0x2B-bin/henshin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     pwngdb = {
       url = "github:pwndbg/pwndbg";
       inputs.nixpkgs.follows = "nixpkgs";

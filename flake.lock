@@ -132,6 +132,24 @@
         "type": "github"
       }
     },
+    "flake-parts_5": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib_5"
+      },
+      "locked": {
+        "lastModified": 1777988971,
+        "narHash": "sha256-qIoWPDs+0/8JecyYgE3gpKQxW/4bLW/gp45vow9ioCQ=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "0678d8986be1661af6bb555f3489f2fdfc31f6ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "hatsune-miku-cursors": {
       "inputs": {
         "flake-parts": "flake-parts_3",
@@ -150,6 +168,27 @@
       "original": {
         "owner": "0x2B-bin",
         "repo": "hatsune-miku-cursors-flake",
+        "type": "github"
+      }
+    },
+    "henshin": {
+      "inputs": {
+        "flake-parts": "flake-parts_4",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779088301,
+        "narHash": "sha256-fSqJGgzZYhzXnjvJNCUNU35YM0tSGhFBAR/7NcURcu8=",
+        "owner": "0x2B-bin",
+        "repo": "henshin",
+        "rev": "a394911d97876cba0edb01c91a70c77cc5f6bb81",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0x2B-bin",
+        "repo": "henshin",
         "type": "github"
       }
     },
@@ -343,6 +382,21 @@
         "type": "github"
       }
     },
+    "nixpkgs-lib_5": {
+      "locked": {
+        "lastModified": 1777168982,
+        "narHash": "sha256-GOkGPcboWE9BmGCRMLX3worL4EMnsnG8MyKmXNeYuhQ=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "f5901329dade4a6ea039af1433fb087bd9c1fe14",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1777954456,
@@ -434,7 +488,7 @@
     },
     "qylock": {
       "inputs": {
-        "flake-parts": "flake-parts_4",
+        "flake-parts": "flake-parts_5",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -458,6 +512,7 @@
         "anicursors": "anicursors",
         "flake-parts": "flake-parts_2",
         "hatsune-miku-cursors": "hatsune-miku-cursors",
+        "henshin": "henshin",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
         "niri-src": "niri-src",
