@@ -1,3 +1,5 @@
-awww img ./chisa.jpg
+awww img ./chisa.jpg --transition-fps 60 --transition-type wipe
 pkill -SIGUSR1 kitty
 wal -i ./chisa.jpg -n -s -t --backend colorz -b "#0a0f19"
+pkill quickshell
+niri msg action spawn -- "quickshell"
