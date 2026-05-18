@@ -1,0 +1,39 @@
+output "DP-1" { 
+    mode "1920x1080@164.834"
+}
+
+window-rule {
+    match app-id="vesktop"
+
+    opacity 0.95
+
+    background-effect {
+        blur true
+    }
+}
+
+layout {
+    border {
+        width 2
+        active-color "#2d9dce"
+        inactive-color "#505050"
+
+        // Color of the border around windows that request your attention.
+        urgent-color "#9b0000"
+
+        // Gradients can use a few different interpolation color spaces.
+        // For example, this is a pastel rainbow gradient via in="oklch longer hue".
+        //
+        // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
+
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+}
+
+cursor {
+    xcursor-theme "miyabi"
+    xcursor-size 16
+
+    //hide-when-typing
+    //hide-after-inactive-ms 1000
+}

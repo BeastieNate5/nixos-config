@@ -1,0 +1,6 @@
+theme_dir = "/home/nate/nixos-config/dotfiles/hsn/themes"
+files = [
+    "niri",
+    "kitty",
+    "quickshell",
+]
