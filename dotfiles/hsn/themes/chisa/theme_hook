@@ -1,0 +1,3 @@
+awww img ./chisa.jpg
+pkill -SIGUSR1 kitty
+wal -i ./chisa.jpg -n -s -t --backend colorz -b "#0a0f19"

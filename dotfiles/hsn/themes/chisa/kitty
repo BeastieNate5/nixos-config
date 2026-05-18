@@ -1,0 +1,27 @@
+font_family      family="JetBrainsMono Nerd Font"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+
+background_opacity    0.75
+foreground   #c6c7c9
+background   #0a0f19
+cursor       #c6c7c9
+
+color0       #1e2227
+color8       #56595d
+color1       #9aabc5
+color9       #9aabc5
+color2       #6e87b1
+color10      #6e87b1
+color3       #9996aa
+color11      #9996aa
+color4       #bcb8c3
+color12      #bcb8c3
+color5       #b1828f
+color13      #b1828f
+color6       #ac4955
+color14      #ac4955
+color7       #c6c7c9
+color15      #c6c7c9
+
