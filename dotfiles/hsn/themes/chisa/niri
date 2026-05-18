@@ -19,3 +19,11 @@ layout {
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 }
+
+cursor {
+    xcursor-theme "chisa_blz"
+    xcursor-size 16
+
+    //hide-when-typing
+    //hide-after-inactive-ms 1000
+}

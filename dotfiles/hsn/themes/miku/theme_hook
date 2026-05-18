@@ -1,5 +1,6 @@
 awww img ./miku.png --transition-fps 60 --transition-type grow
 pkill -SIGUSR1 kitty
 wal -i ./miku.png -n -s -t
+dconf write /org/gnome/desktop/interface/cursor-theme "'miku_blz'"
 pkill quickshell
 niri msg action spawn -- "quickshell"

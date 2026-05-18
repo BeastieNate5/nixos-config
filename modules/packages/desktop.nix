@@ -16,6 +16,8 @@
         networkmanagerapplet
         pavucontrol
         ffmpeg
+        glib
+        gsettings-desktop-schemas
         mpv
         wireshark
         postman
