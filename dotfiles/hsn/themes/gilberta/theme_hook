@@ -1,0 +1,5 @@
+awww img ./gilberta.jpg --transition-fps 60 --transition-type outer
+pkill -SIGUSR1 kitty
+wal -i ./gilberta.jpg -n -s -t -b "#0a0f19"
+pkill quickshell
+niri msg action spawn -- "quickshell"
