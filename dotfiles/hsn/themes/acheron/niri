@@ -21,7 +21,7 @@ layout {
 }
 
 cursor {
-    xcursor-theme "chisa_blz"
+    xcursor-theme "acheron_blz"
     xcursor-size 16
 
     //hide-when-typing
