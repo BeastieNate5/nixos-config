@@ -65,7 +65,9 @@ PanelWindow {
                 }
             }
             */
-            WorkspacesWidget {}
+            WorkspacesWidget {
+                monitorName: modelData.name
+            }
         }
 
         RowLayout {

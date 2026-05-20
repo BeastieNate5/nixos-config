@@ -6,10 +6,13 @@ import "../.."
 
 Item {
     id: root
+    property string monitorName: ""
     property var workspaces: []
-    property int activeWorkspace: 1
+    property int activeWorkspace: -1
     property int hPadding: 15
     property int vPadding: 3
+
+    readonly property int workspaceCount: workspaces.length
 
     implicitWidth: workspaceRow.implicitWidth + hPadding
     implicitHeight: workspaceRow.implicitHeight + vPadding
@@ -22,12 +25,34 @@ Item {
             onRead: line => {
                 let event = JSON.parse(line)
 
-                if (event.WorkspacesChanged) {
-                    root.workspaces = event.WorkspacesChanged.workspaces.sort((a, b) => a.idx - b.idx);
+                if (event.WorkspacesChanged || event.WorkspaceActivated) {
+                    fetchWorkspaces.running = true
                 }
-                else if (event.WorkspaceActivated) {
-                    root.activeWorkspace = event.WorkspaceActivated.id
+            }
+        }
+    }
+
+    Process {
+        id: fetchWorkspaces
+        command: ["niri", "msg", "--json", "workspaces"]
+        running: true
+        stdout: StdioCollector {
+            onStreamFinished: {
+                let workspacesJson = JSON.parse(text)
+                let tempWorkspaces = []
+
+                for (let i = 0; i < workspacesJson.length; i++) {
+                    let workspace = workspacesJson[i]
+
+                    if (workspace["output"] == root.monitorName) {
+                        if (workspace["is_active"]) {
+                            root.activeWorkspace = workspace["idx"]
+                        }
+                        tempWorkspaces.push(workspace)
+                    }
                 }
+                tempWorkspaces.sort((a, b) => a.idx - b.idx)
+                root.workspaces = tempWorkspaces
             }
         }
     }
@@ -55,7 +80,7 @@ Item {
             anchors.bottomMargin: root.vPadding / 2
 
             Text {
-                text: root.workspaces.findIndex(item => item.id === root.activeWorkspace) + 1
+                text: root.activeWorkspace
                 color: "white"
                 Layout.rightMargin: 2
                 Layout.alignment: Qt.AlignVCenter
@@ -65,11 +90,14 @@ Item {
             }
 
             Repeater {
-                model: root.workspaces
+                model: root.workspaceCount
                 Rectangle {
-                    Layout.preferredWidth: (modelData.id === root.activeWorkspace ? 30 : 20)
-                    Layout.preferredHeight: (modelData.id === root.activeWorkspace ? 11 : 7)
-                    color: (modelData.id === root.activeWorkspace ? Style.pcolor : "#ffffff") || "#ffffff"
+                    readonly property var workspaceData: root.workspaces[index]
+                    readonly property bool isActiveWorkspace: workspaceData.is_active
+
+                    Layout.preferredWidth: (isActiveWorkspace ? 30 : 20)
+                    Layout.preferredHeight: (isActiveWorkspace ? 11 : 7)
+                    color: (isActiveWorkspace ? Style.pcolor : "#ffffff") || "#ffffff"
                     radius: 50
 
                     Layout.alignment: Qt.AlignCenter
