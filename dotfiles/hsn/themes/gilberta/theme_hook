@@ -1,4 +1,4 @@
-awww img ./gilberta.jpg --transition-fps 60 --transition-type outer
+awww img ./gilberta.jpg --transition-fps 60 --transition-type random
 pkill -SIGUSR1 kitty
 wal -i ./gilberta.jpg -n -s -t -b "#0a0f19"
 pkill quickshell

@@ -1,4 +1,4 @@
-awww img ./miku.png --transition-fps 60 --transition-type grow
+awww img ./miku.png --transition-fps 60 --transition-type random
 pkill -SIGUSR1 kitty
 wal -i ./miku.png -n -s -t
 dconf write /org/gnome/desktop/interface/cursor-theme "'miku_blz'"
