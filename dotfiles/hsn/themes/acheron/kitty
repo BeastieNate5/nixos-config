@@ -1,0 +1,31 @@
+font_family      family="JetBrainsMono Nerd Font"
+foreground         #c4c3c3
+background         #131010
+background_opacity 0.75
+cursor             #c4c3c3
+
+active_tab_foreground     #131010
+active_tab_background     #c4c3c3
+inactive_tab_foreground   #c4c3c3
+inactive_tab_background   #131010
+
+active_border_color   #c4c3c3
+inactive_border_color #131010
+bell_border_color     #aa8c8c
+
+color0       #131010
+color8       #6e5959
+color1       #aa8c8c
+color9       #aa8c8c
+color2       #ab6664
+color10      #ab6664
+color3       #ae322d
+color11      #ae322d
+color4       #8b88aa
+color12      #8b88aa
+color5       #c1bac0
+color13      #c1bac0
+color6       #a99ea5
+color14      #a99ea5
+color7       #c4c3c3
+color15      #c4c3c3
